@@ -15,7 +15,7 @@ Incremental list:
   <div class="incremental">
 
 * Second item
-    - Sub-item
+    * Sub-item
 
   </div>
 
