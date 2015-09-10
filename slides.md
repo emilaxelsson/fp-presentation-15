@@ -9,13 +9,13 @@ Incremental list:
 
   <div class="incremental">
 
-  * First item
+* First item
 
   </div>
   <div class="incremental">
 
-  * Second item
-      - Sub-item
+* Second item
+    - Sub-item
 
   </div>
 
