@@ -57,17 +57,24 @@ TODO: fyll på med fler ...
 TODO: fyll på med mer information
 
 
-Kurser
+Kurser som innehåller FP
 ================
 
-* LP1: IFP = [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/), Emil Axelsson
-* LP2: FP = [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/), Dave Sands
-* LP2: PLT = [Andreas Abel](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/)
-* LP3: AFP = [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson
-* LP4: PFP = [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/), Mary Sheeran & John Hughes
-* LP4: Comp = [Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren
-* LP1: Types = [http://www.cse.chalmers.se/edu/year/2013/course/DAT140_Types/](http://www.cse.chalmers.se/edu/course/DAT140/), Thierry Coquand, Peter Dybjer, Ulf Norell
-* ...
+* Kandidatnivån (första tre åren):
+    * LP1: IFP = [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/), Emil Axelsson
+    * LP2: FP = [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/), Dave Sands
+    * LP3: DSLM = [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath), Cezar Ionescu, Patrik Jansson
+    * (LP3: ProgPara = [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/), Jean-Philippe Bernardy, inställd våren 2015)
+    * LP3-4: Kandidatarbete
+    * ...
+* Masternivån (sista två åren):
+    * LP1: Types = [http://www.cse.chalmers.se/edu/year/2013/course/DAT140_Types/](http://www.cse.chalmers.se/edu/course/DAT140/), Thierry Coquand, Peter Dybjer, Ulf Norell
+    * LP2: PLT = [Andreas Abel](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/)
+    * LP2: Models = [Models of Computation](https://sites.google.com/site/modelsofcomputation/)
+    * LP3: AFP = [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson
+    * LP4: PFP = [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/), Mary Sheeran & John Hughes
+    * LP4: Comp = [Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren
+    * ...
 
 
 Forskning
