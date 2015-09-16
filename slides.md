@@ -2,34 +2,6 @@
 
 
 
-Test slide 2
-====================================================================================================
-
-Incremental list:
-
-  <div class="incremental">
-
-* First item
-
-  </div>
-  <div class="incremental">
-
-* Second item
-    * Sub-item
-
-  </div>
-
-
-
-Test slide 2
-================================================================================
-
-Haskell code:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.haskell}
-ones = 1:ones
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Funktionell Programmering på D&IT
 ================
 
@@ -147,3 +119,35 @@ DSLsofMath: motivation
 ================
 
 Programmering och matematik är väldigt närliggande ämnen
+
+
+
+
+Test slide 2
+====================================================================================================
+
+Incremental list:
+
+  <div class="incremental">
+
+* First item
+
+  </div>
+  <div class="incremental">
+
+* Second item
+    * Sub-item
+
+  </div>
+
+
+
+Test slide 2
+================================================================================
+
+Haskell code:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.haskell}
+ones = 1:ones
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
