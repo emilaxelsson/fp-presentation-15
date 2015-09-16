@@ -98,3 +98,52 @@ Exempel:
 
 * Fortsättningskursen "Avancerad funktionell programmering" har getts varje år sedan 1993:
     * 1993: John Hughes, 1995: Magnus Carlsson, 1999: Lennart Augustsson, 2000: Koen Claessen, 2003: Josef Svenningsson, 2008: Ulf Norell, 2010 och framåt: Patrik Jansson
+
+Matematikens domänspecifika språk
+================
+
+* Ny kurs i LP3 2016 för Chalmers och GU.
+* Valfri för D, DV, IT, TM, ...
+
+* Examinator: Patrik Jansson
+* Föreläsare: Cezar Ionescu
+
+Förkunskaper: "ett års studier"
+* en kurs i diskret matematik (pågår)
+* två andra kurser i matematik (exampelvis Linjär algebra och Analys)
+* två kurser i datateknik (exemeplvis två kurser i programmering)
+* ytterligare tre kurser (22.5hp) inom matematik, data eller IT
+
+
+Kursen presenterar klassiska matematiska ämnen från ett
+datavetenskaligt perspektiv: genom att specificera de introducerade
+begreppen, vara uppmärksam på syntax och typer, och slutligen genom
+att bygga domänspecifika språk för vissa av de matematiska områden som
+nämns nedan.
+
+DSLsofMath: Lärandemål
+================
+
+* designa och implementera ett domänspecifikt språk (DSL) för en ny domän
+* strukturera delområden inom matematik i termer av DSL
+* förklara de centrala begreppen i grudläggande reell och complex anays, algebra och linjär algebra
+
+* utveckla lämplig notation för matematiska koncept
+* genomföra och kalkylera bevis
+* använda potensserier för att lösa differentialekvationer
+* använda Laplace-transformer för att lösa differentialekvationer
+
+* diskutera och jämföra olika implementationer av matematiska begrepp
+
+Föreläsningarna kommer att behandla:
+* Introduktion till funktionell programmering, programkalkyl och bevis
+* Introduktion till domänspecifika språk (DSL) med linjär algebra som exempel
+* DSL och matematik: kategoriteori som exempel
+* Reell analys: medelvärdessatser, Taylors formuler
+* Reell analys: ett DSL för potensserier
+* Mer linjär algebra: egenvärden och optimering
+
+DSLsofMath: motivation
+================
+
+Programmering och matematik är väldigt närliggande ämnen
