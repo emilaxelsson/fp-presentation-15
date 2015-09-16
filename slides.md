@@ -81,6 +81,7 @@ Matematikens domänspecifika språk
 * Föreläsare: Cezar Ionescu
 
 Förkunskaper: "ett års studier"
+
 * en kurs i diskret matematik (pågår)
 * två andra kurser i matematik (exampelvis Linjär algebra och Analys)
 * två kurser i datateknik (exemeplvis två kurser i programmering)
@@ -108,6 +109,7 @@ DSLsofMath: Lärandemål
 * diskutera och jämföra olika implementationer av matematiska begrepp
 
 Föreläsningarna kommer att behandla:
+
 * Introduktion till funktionell programmering, programkalkyl och bevis
 * Introduktion till domänspecifika språk (DSL) med linjär algebra som exempel
 * DSL och matematik: kategoriteori som exempel
