@@ -147,3 +147,6 @@ DSLsofMath: motivation
 ================
 
 Programmering och matematik är väldigt närliggande ämnen
+
+TODO: abstract till
+  http://www.cse.chalmers.se/edu/course/CSE-seminarier/
