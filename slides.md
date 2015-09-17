@@ -2,34 +2,6 @@
 
 
 
-Test slide 2
-====================================================================================================
-
-Incremental list:
-
-  <div class="incremental">
-
-* First item
-
-  </div>
-  <div class="incremental">
-
-* Second item
-    * Sub-item
-
-  </div>
-
-
-
-Test slide 2
-================================================================================
-
-Haskell code:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.haskell}
-ones = 1:ones
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Funktionell Programmering på D&IT
 ================
 
@@ -81,7 +53,42 @@ Forskning
 ================
 
 * QuickCheck
-*
+* Feldspar
+
+Feldspar
+================
+
+<http://feldspar.github.io/>
+
+* Ett funktionellt språk för numeriska beräkningar
+* Implementerat som ett bibliotek i Haskell
+* Avsett för inbyggda system, t.ex. basstationer för telekom
+* **In:** funktionell kod på hög nivå
+
+~~~~{.haskell}
+-- Antenna combining in LTE receiver
+antennaComb chs = map average       -- Average across antennas
+                . transpose         -- Swap dimensions
+                . zipWith (.*) chs  -- Compensate for channel distortion
+~~~~
+
+* **Ut:** optimerad C-kod
+
+~~~~{.c}
+void antenna_comb(struct array * v0, struct array * v1, struct array * out) {
+    initArray(out, sizeof(float complex), 1024);
+    for(uint32_t v2 = 0; v2 < 1024; v2 += 1) {
+        float complex e0;
+        float complex v4;
+        e0 = (0.0f+0.0fi);
+        for(uint32_t v3 = 0; v3 < 4; v3 += 1) {
+            v4 = (e0 + (at(float complex,&at(struct array,v0,v3),v2)
+                      * at(float complex,&at(struct array,v1,v3),v2)));
+            e0 = v4; }
+        at(float complex,out,v2) = (e0 / (4.0f+0.0fi)); } }
+~~~~
+
+
 
 Företag
 ================
@@ -109,6 +116,7 @@ Matematikens domänspecifika språk
 * Föreläsare: Cezar Ionescu
 
 Förkunskaper: "ett års studier"
+
 * en kurs i diskret matematik (pågår)
 * två andra kurser i matematik (exampelvis Linjär algebra och Analys)
 * två kurser i datateknik (exemeplvis två kurser i programmering)
@@ -136,6 +144,7 @@ DSLsofMath: Lärandemål
 * diskutera och jämföra olika implementationer av matematiska begrepp
 
 Föreläsningarna kommer att behandla:
+
 * Introduktion till funktionell programmering, programkalkyl och bevis
 * Introduktion till domänspecifika språk (DSL) med linjär algebra som exempel
 * DSL och matematik: kategoriteori som exempel
