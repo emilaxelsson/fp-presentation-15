@@ -1,6 +1,26 @@
 % Functional Programming @ D&IT
 
 
+Vad är funktionell programmering (för oss)?
+================================================================
+(Exempel i [Haskell](http://www.haskell.org/).)
+
+* Mästerligt möte mellan matematik och maskin
+* Ett fantastiskt flexibelt språk för (inte bara matematiska) uttryck
+    * Algebra: ```3+4```, ```5/8```, ```(17+3)*(2 + 1)```, ...
+    * Text: ```reverse "kirtaP"```, ```"Hej " ++ namn ++ "!"```, ...
+    * Funktioner: ```area r = pi*r^2```, TODO: more examples
+    * Kombinationer: ```let   area r = pi*r^2   in  (area 2) / (area 1)```
+* Korta och koncisa definitioner
+* Typer som hjälper programmeraren att undvika fel
+* Kontrollerade sidoeffekter ger bra parallellism och korrekthet
+
+Några funktionella språk:
+* Lisp, Scheme, Clojure, JavaScript, Erlang
+* Haskell, ML, Clean, Miranda och F#.
+
+
+
 
 Funktionell Programmering på D&IT
 ================
@@ -156,6 +176,18 @@ DSLsofMath: motivation
 ================
 
 Programmering och matematik är väldigt närliggande ämnen
+
+TODO: Återanvänd en del av detta från början:
+
+* Mästerligt möte mellan matematik och maskin
+* Ett fantastiskt flexibelt språk för (inte bara matematiska) uttryck
+    * Algebra: ```3+4```, ```5/8```, ```(17+3)*(2 + 1)```, ...
+    * Text: ```reverse "kirtaP"```, ```"Hej " ++ namn ++ "!"```, ...
+    * Funktioner: ```area r = pi*r^2```, TODO: more examples
+    * Kombinationer: ```let   area r = pi*r^2   in  (area 2) / (area 1)```
+* Korta och koncisa definitioner
+* Typer som hjälper programmeraren att undvika fel
+* Kontrollerade sidoeffekter ger bra parallellism och korrekthet
 
 TODO: abstract till
   http://www.cse.chalmers.se/edu/course/CSE-seminarier/
