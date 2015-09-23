@@ -16,40 +16,51 @@ Vad är funktionell programmering (för oss)?
 * Kontrollerade sidoeffekter ger bra parallellism och korrekthet
 
 Några funktionella språk:
+
 * Lisp, Scheme, Clojure, JavaScript, Erlang
 * Haskell, ML, Clean, Miranda och F#.
 
 
-
-
-Funktionell Programmering på D&IT
+Vad innebär Funktionell Programmering i ett större perspektiv?
 ================
 
-* Personer
-* Kurser
-* Forskning
-* Företag
-* Historia
+Företag? TODO: EmAx
+
+* [Functional Jobs](http://functionaljobs.com/)
+* Facebook, Google, Standard Chartered, Microsoft Research, Klarna, ...
+* Galois, FP-Complete, WellTyped, Quviq, ...
 
 
-**Pre-writing:**
+Annat?
+
+
+Spetsforskning inom Funktionell Programmering här i Göteborg
 ================
 
-Personer
-================
+TODO: fyll på om säkerhet, språkteknologi, etc.
 
-* John Hughes: [on wikipedia](https://en.wikipedia.org/wiki/John_Hughes_(computer_scientist))
-* Mary Sheeran: [ICFP keynote 2015](https://www.youtube.com/watch?v=gz8JpdAwtuo&index=15&list=PLnqUlCo055hWNtUo1Haoq347VhCqIjs7u) [slides](http://icfpconference.org/icfp2015/sheeran-keynote.pdf)
-* Koen Claessen: [QuickCheck](https://en.wikipedia.org/wiki/QuickCheck), Aktuellt: kursen [Diskret matematik för datavetare](http://www.cse.chalmers.se/edu/course/DIT980/)
-* Patrik Jansson: Står här! [Github](https://github.com/patrikja) Aktuellt: [ProfLect](https://github.com/patrikja/ProfLect)
-* Emil Axelsson:
-* Niklas Broberg:
+* Test-verktyget QuickCheck (för Haskell och Erlang)
+* Prisbelönta logikverktyg
+    * MiniSat SAT-solver
+    * Paradox model finder
+* Nya programspråk
+    * Haskell (delar av språket design, kompilatorer, bibliotek, verktyg)
+    * Agda (funktionell programmering möter bevissystem)
+* Utveckling av "generisk" funktionell programmerin (polytypisk programmering)
+* Domänspecifika språk (DSL = Domain Specific Languages)
+    * Lava, Wired för att beskriva hårdvara
+    * QuickCheck för automatisk testning och specifikation
+    * Feldspar för digital signalbehandling och programmering av inbyggda system
+    * Grammatical Framework - för grammatiker och naturliga språk
 
-TODO: fyll på med fler ...
-TODO: fyll på med mer information
+TODO: PaJa - något klimateffektforskning eller globala system
+
+Länkar:
+* [FP-gruppen](http://wiki.portal.chalmers.se/cse/pmwiki.php/FP/FP),
 
 
-Kurser som innehåller FP
+
+I vilka kurser lär jag mig mer om Funktionell Programmering?
 ================
 
 * Kandidatnivån (första tre åren):
@@ -69,11 +80,27 @@ Kurser som innehåller FP
     * ...
 
 
-Forskning
+
+
+
+
+**Pre-writing:**
 ================
 
-* QuickCheck
-* Feldspar
+Personer
+================
+
+* John Hughes: [on wikipedia](https://en.wikipedia.org/wiki/John_Hughes_(computer_scientist))
+* Mary Sheeran: [ICFP keynote 2015](https://www.youtube.com/watch?v=gz8JpdAwtuo&index=15&list=PLnqUlCo055hWNtUo1Haoq347VhCqIjs7u) [slides](http://icfpconference.org/icfp2015/sheeran-keynote.pdf)
+* Koen Claessen: [QuickCheck](https://en.wikipedia.org/wiki/QuickCheck), Aktuellt: kursen [Diskret matematik för datavetare](http://www.cse.chalmers.se/edu/course/DIT980/)
+* Patrik Jansson: Står här! [Github](https://github.com/patrikja) Aktuellt: [ProfLect](https://github.com/patrikja/ProfLect)
+* Emil Axelsson:
+* Niklas Broberg:
+
+TODO: fyll på med fler ...
+TODO: fyll på med mer information
+
+
 
 Feldspar
 ================
@@ -109,13 +136,6 @@ void antenna_comb(struct array * v0, struct array * v1, struct array * out) {
 ~~~~
 
 
-
-Företag
-================
-
-* [Functional Jobs](http://functionaljobs.com/)
-* Facebook, Google, Standard Chartered, Microsoft Research, Klarna, ...
-* Galois, FP-Complete, WellTyped, Quviq, ...
 
 
 Historia
@@ -191,3 +211,9 @@ TODO: Återanvänd en del av detta från början:
 
 TODO: abstract till
   http://www.cse.chalmers.se/edu/course/CSE-seminarier/
+
+----------------
+
+Länkar till "Jobs in Functional Programming" på Chalmers 2007!
+* http://www.cse.chalmers.se/~rjmh/jobs-in-fp/
+* http://www.cse.chalmers.se/~rjmh/jobs-in-fp/jobs%20photos/content/DSC_6154_large.html
