@@ -33,6 +33,12 @@ Företag? TODO: EmAx
 
 Annat?
 
+Vad innebär Funktionell Programmering i ett större perspektiv?
+================
+
+  <img src="AllLogos.png" width="950">
+
+
 
 Spetsforskning inom Funktionell Programmering här i Göteborg
 ================
