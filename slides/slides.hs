@@ -201,4 +201,3 @@ bouncingBalls slide = do
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
-
