@@ -47,6 +47,7 @@ smallContent = groupAttrs atts . smallSize
 --------------------------------------------------------------------------------
 -- Slides
 
+first :: Slide
 first = verticallyCentered $ column
     [ ""
     , ""
@@ -57,6 +58,7 @@ first = verticallyCentered $ column
     , ""
     ]
 
+whatIsFP :: Slide
 whatIsFP = column
     [ title "Vad är funktionell programmering (för oss)?"
     , smallContent $ list Unnumbered
@@ -75,6 +77,7 @@ whatIsFP = column
     , ""
     ]
 
+whatIsFP2 :: Slide
 whatIsFP2 = column
     [ title "Vad är funktionell programmering (för oss)?"
     , content $ column
@@ -87,6 +90,7 @@ whatIsFP2 = column
     , ""
     ]
 
+logos :: Slide
 logos = column
     [ title "Loads of FP-related companies"
     , centered $ withAttrs atts $ image "../AllLogos.png"
@@ -98,6 +102,7 @@ logos = column
   where
     atts = ["width" =: "850"]
 
+bouncing :: Slide
 bouncing = column
     [ title "Bouncing balls live"
     , verticallyCentered $ centered $ lift $ do
@@ -107,6 +112,7 @@ bouncing = column
     , ""
     ]
 
+end :: Slide
 end = verticallyCentered $ title "End of presentation."
 
 main :: IO ()
@@ -126,7 +132,7 @@ main = do
 
 --------------------------------------------------------------------------------
 
-type Size = (Double,Double)
+type Size = (Double, Double)
 
 radius :: Double
 radius = 15
@@ -135,17 +141,17 @@ type Ball  = [Point]
 type State = [Ball]
 
 bounce :: Size -> Point -> Int -> Ball
-bounce (w,h) (x,y) v
-   | v == 0 && y >= maxY = replicate 20 (x,y)
-   | y' > maxY           = bounce (w,h) (x,y) (2-v)
-   | otherwise           = (x,y) : bounce (w,h) (x,y') v'
+bounce (w, h) (x, y) v
+   | v == 0 && y >= maxY = replicate 20 (x, y)
+   | y' > maxY           = bounce (w, h) (x, y) (2-v)
+   | otherwise           = (x, y) : bounce (w, h) (x, y') v'
  where
-   maxY = h-radius
+   maxY = h - radius
    v'   = v + 1
    y'   = y + fromIntegral v
 
 step :: State -> State
-step bs = [ ps | _:ps <- bs ]
+step = map tail
 
 ballShape :: Ball -> Shape ()
 ballShape []      = return ()
@@ -153,8 +159,9 @@ ballShape (pos:_) = circle pos radius
 
 drawBall :: Ball -> Picture ()
 drawBall ball = do
-    Canvas.color (RGB 255 0 0) $ fill $ ballShape ball
+    Canvas.color red $ fill $ ballShape ball
     stroke $ ballShape ball
+  where red = RGB 255 0 0
 
 animate :: Canvas -> IORef State -> IO ()
 animate can state = do
@@ -164,6 +171,8 @@ animate can state = do
     setTimer (Once 20) $ animate can state
     return ()
 
+----------------------------------------------------------------
+
 -- `wrapDiv e` makes a "div" node with `e` as the only child
 wrapDiv :: Elem -> IO Elem
 wrapDiv e = newElem "div" `with` [children [e]]
@@ -172,7 +181,7 @@ wrapDiv e = newElem "div" `with` [children [e]]
 appendChildren :: Elem -> [Elem] -> IO ()
 appendChildren parent children = sequence_ [appendChild parent c | c <- children]
 
--- `column parent children` adds the children as a column column to the parent
+-- `column parent children` adds the children as a column to the parent
 elemColumn :: Elem -> [Elem] -> IO ()
 elemColumn parent children = do
     cs <- sequence [wrapDiv c | c <- children]
@@ -196,10 +205,13 @@ canWidth, canHeight :: Num a => a
 canWidth  = 700
 canHeight = 500
 
-bouncingBalls slide = do
+-- TODO: On my machine the balls start lower than the mouse click position (Patrik).
+-- TODO: After a few balls have disappeard the demo just stops.
+bouncingBalls :: Elem -> IO HandlerInfo
+bouncingBalls el = do
     canvas <- mkCanvas canWidth canHeight
     clear  <- mkButton "clear"
-    elemColumn slide [canvas,clear]
+    elemColumn el [canvas, clear]
 
     Just can <- getCanvas canvas
 
@@ -214,7 +226,7 @@ bouncingBalls slide = do
       let (x, y) = mouseCoords evt
           pos = (fromIntegral x, fromIntegral y)
       balls <- readIORef state
-      writeIORef state $ bounce (canWidth,canHeight) pos 0 : balls
+      writeIORef state $ bounce (canWidth, canHeight) pos 0 : balls
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
