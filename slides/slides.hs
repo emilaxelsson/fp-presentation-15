@@ -8,15 +8,11 @@ import Haste.Events
 import Haste.Graphics.Canvas hiding (color)
 import qualified Haste.Graphics.Canvas as Canvas
 import Haste.Deck
-import Haste.Deck.Types
 
 
 
 --------------------------------------------------------------------------------
 -- Helper functions
-
-col :: [Slide] -> Slide
-col = column . reverse
 
 title :: Slide -> Slide
 title = centered . color "blue" . fontSize (Pt 42)
@@ -39,7 +35,7 @@ content = groupAttrs atts . normalSize
 --------------------------------------------------------------------------------
 -- Slides
 
-first = verticallyCentered $ col
+first = verticallyCentered $ column
     [ ""
     , ""
     , title "Functional Programming\n @ D&IT"
@@ -49,7 +45,7 @@ first = verticallyCentered $ col
     , ""
     ]
 
-whatIsFP = col
+whatIsFP = column
     [ title "Vad är funktionell programmering (för oss)?"
     , content $ list Unnumbered
         [ "Mästerligt möte mellan matematik och maskin"
@@ -71,9 +67,9 @@ whatIsFP = col
         ]
     ]
 
-logos = col
+logos = column
     [ title "Loads of FP-related companies"
-    , centered $ image' atts "../AllLogos.png"
+    , centered $ withAttrs atts $ image "../AllLogos.png"
     , ""
     , ""
     , ""
@@ -82,9 +78,9 @@ logos = col
   where
     atts = ["width" =: "850"]
 
-bouncing = col
+bouncing = column
     [ title "Bouncing balls live"
-    , verticallyCentered $ centered $ Lift $ do
+    , verticallyCentered $ centered $ lift $ do
           e <- newElem "div"
           bouncingBalls e
           return e
