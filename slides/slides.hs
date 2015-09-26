@@ -23,6 +23,9 @@ smallTitle = centered . color "blue" . fontSize (Pt 38)
 normalSize :: Slide -> Slide
 normalSize = fontSize (Pt 28)
 
+smallSize :: Slide -> Slide
+smallSize = fontSize (Pt 22)
+
 content :: Slide -> Slide
 content = groupAttrs atts . normalSize
   where
@@ -30,6 +33,15 @@ content = groupAttrs atts . normalSize
       [ style "margin-left"  =: "6em"
       , style "margin-right" =: "4em"
       , style "line-height"  =: "4em"
+      ]
+
+smallContent :: Slide -> Slide
+smallContent = groupAttrs atts . smallSize
+  where
+    atts =
+      [ style "margin-left"  =: "6em"
+      , style "margin-right" =: "4em"
+      , style "line-height"  =: "3em"
       ]
 
 --------------------------------------------------------------------------------
@@ -47,17 +59,24 @@ first = verticallyCentered $ column
 
 whatIsFP = column
     [ title "Vad är funktionell programmering (för oss)?"
-    , content $ list Unnumbered
+    , smallContent $ list Unnumbered
         [ "Mästerligt möte mellan matematik och maskin"
-        , "Ett fantastiskt flexibelt språk för (inte bara matematiska) uttryck"
-        , "      Algebra: 3+4, 5/8, (17+3)*(2 + 1), ..."
-        , "      Text: reverse \"kirtaP\", \"Hej \" ++ namn ++ \"!\", ..."
-        , "      Funktioner: area r = pi*r^2, TODO: more examples"
-        , "      Kombinationer: let   area r = pi*r^2   in  (area 2) / (area 1)"
+        , sublist Unnumbered "Ett fantastiskt flexibelt språk för (inte bara matematiska) uttryck"
+            [ "Algebra: 3+4, 5/8, (17+3)*(2 + 1), ..."
+            , "Text: `reverse \"kirtaP\"`, `\"Hej \" ++ namn ++ \"!\"`, ..."
+            , "Funktioner: `area r = pi*r^2`, TODO: more examples"
+            , "Kombinationer: `let   area r = pi*r^2   in  (area 2) / (area 1)`"
+            ]
         , "Korta och koncisa definitioner"
         , "Typer som hjälper programmeraren att undvika fel"
         , "Kontrollerade sidoeffekter ger bra parallellism och korrekthet"
         ]
+    , ""
+    , ""
+    ]
+
+whatIsFP2 = column
+    [ title "Vad är funktionell programmering (för oss)?"
     , content $ column
         [ "Några funktionella språk:"
         , list Unnumbered
@@ -65,6 +84,7 @@ whatIsFP = column
             , "Haskell, ML, Clean, Miranda och F#"
             ]
         ]
+    , ""
     ]
 
 logos = column
@@ -94,6 +114,7 @@ main = do
   deck <- createDeck pan
       [ first
       , whatIsFP
+      , whatIsFP2
       , logos
       , bouncing
       , end
