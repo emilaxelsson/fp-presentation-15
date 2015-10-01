@@ -104,12 +104,11 @@ logos = column
 
 bouncing :: Slide
 bouncing = column
-    [ title "Bouncing balls live"
+    [ sized 0.08 $ title "Bouncing balls live"
     , verticallyCentered $ centered $ lift $ do
           e <- newElem "div"
           bouncingBalls e
           return e
-    , ""
     ]
 
 end :: Slide
