@@ -15,7 +15,7 @@ import Haste.Deck
 -- Helper functions
 
 title :: Slide -> Slide
-title = centered . color "blue" . fontSize (Pt 42)
+title = sized 0.2 . centered . color "blue" . fontSize (Pt 42)
 
 smallTitle :: Slide -> Slide
 smallTitle = centered . color "blue" . fontSize (Pt 38)
@@ -92,19 +92,43 @@ whatIsFP2 = column
 
 logos :: Slide
 logos = column
-    [ title "Loads of FP-related companies"
+    [ sized 0.15 $ title "Loads of FP-related companies"
     , centered $ withAttrs atts $ image "../AllLogos.png"
-    , ""
-    , ""
-    , ""
-    , ""
     ]
   where
     atts = ["width" =: "850"]
 
+haste1 :: Slide
+haste1 = column
+    [ title "FP in action: the Haste compiler"
+    , content $ list Unnumbered
+        [ sublist Unnumbered "Haste: a Haskell to Javascript compiler"
+            [ "Program web pages using Haskell"
+            ]
+        , sublist Unnumbered "Developed by former D student Anton Ekblad"
+            [ "Currently a Ph.D. student in our group"
+            ]
+        , "Some more cool facts about Haste..."
+        ]
+    ]
+
+haste2 :: Slide
+haste2 = column
+    [ title "Haste example: presentation slides"
+    , content $ list Unnumbered
+        [ "These slides are actually a Haskell program running in my browser"
+        , "Written using Anton's `haste-deck` library: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
+        ]
+    ]
+
+haste3 :: Slide
+haste3 = ""
+
 bouncing :: Slide
 bouncing = column
-    [ sized 0.08 $ title "Bouncing balls live"
+    [ sized 0.08 $ title "Running Haskell code in the slides"
+    , sized 0.08 ""
+    , sized 0.01 $ verticallyCentered $ centered $ fontSize (Pt 22) "\"Bouncing balls\""
     , verticallyCentered $ centered $ lift $ do
           e <- newElem "div"
           bouncingBalls e
@@ -121,6 +145,9 @@ main = do
       , whatIsFP
       , whatIsFP2
       , logos
+      , haste1
+      , haste2
+      , haste3
       , bouncing
       , end
       ]
