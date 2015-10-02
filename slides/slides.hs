@@ -104,12 +104,11 @@ logos = column
 
 bouncing :: Slide
 bouncing = column
-    [ title "Bouncing balls live"
+    [ sized 0.08 $ title "Bouncing balls live"
     , verticallyCentered $ centered $ lift $ do
           e <- newElem "div"
           bouncingBalls e
           return e
-    , ""
     ]
 
 end :: Slide
@@ -151,7 +150,7 @@ bounce (w, h) (x, y) v
    y'   = y + fromIntegral v
 
 step :: State -> State
-step = map tail
+step = map (drop 1)
 
 ballShape :: Ball -> Shape ()
 ballShape []      = return ()
@@ -206,7 +205,6 @@ canWidth  = 700
 canHeight = 500
 
 -- TODO: On my machine the balls start lower than the mouse click position (Patrik).
--- TODO: After a few balls have disappeard the demo just stops.
 bouncingBalls :: Elem -> IO HandlerInfo
 bouncingBalls el = do
     canvas <- mkCanvas canWidth canHeight
