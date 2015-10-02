@@ -146,7 +146,7 @@ end = verticallyCentered $ title "End of presentation."
 
 main :: IO ()
 main = do
-  deck <- createDeck pan
+  deck <- createDeck def {transition = pan}
       [ --testbounce
         first
       , whatIsFP
