@@ -257,7 +257,17 @@ bouncingBalls el = do
     canvas `onEvent` Click $ \evt -> do
       let (x, y) = mouseCoords evt
           pos = fixCoord (fromIntegral x, fromIntegral y)
-          fixCoord (x, y) = (x, y - 320) -- for some reason the y-coordinate is from the top of the browser window, not from the top of the pane
+--          fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
+          fixCoord (x, y) = (x, y - 120) -- for 1024x768 presentation
+
+      -- For some reason the y-coordinate is from the top of the
+      -- browser window, not from the top of the pane. The adjustment
+      -- needed depends on where the canvas is in relation to the
+      -- browser window. There is something wrong in the tranlation of
+      -- the mouse coordinates (should use canvas.offsetTop but seems
+      -- not to work).
+      -- https://github.com/valderman/haste-compiler/search?utf8=%E2%9C%93&q=offsetTop
+
       balls <- readIORef state
       writeIORef state $ bounce (canWidth, canHeight) pos 0 : balls
 
