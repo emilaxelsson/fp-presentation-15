@@ -105,7 +105,7 @@ haste1 = column
         [ sublist Unnumbered "Haste: a Haskell to Javascript compiler"
             [ "Program web pages using Haskell"
             ]
-        , sublist Unnumbered "Developed by former D student Anton Ekblad"
+        , sublist Unnumbered "Developed by former DV student Anton Ekblad"
             [ "Currently a Ph.D. student in our group"
             ]
         , "Some more cool facts about Haste..."
