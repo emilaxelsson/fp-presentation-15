@@ -135,13 +135,20 @@ bouncing = column
           return e
     ]
 
+testbounce :: Slide
+testbounce = lift $ do
+          e <- newElem "div"
+          bouncingBalls e
+          return e
+
 end :: Slide
 end = verticallyCentered $ title "End of presentation."
 
 main :: IO ()
 main = do
   deck <- createDeck pan
-      [ first
+      [ --testbounce
+        first
       , whatIsFP
       , whatIsFP2
       , logos
@@ -169,7 +176,7 @@ type State = [Ball]
 bounce :: Size -> Point -> Int -> Ball
 bounce (w, h) (x, y) v
    | v == 0 && y >= maxY = replicate 20 (x, y)
-   | y' > maxY           = bounce (w, h) (x, y) (2-v)
+   | y' > maxY           = bounce (w, h) (x, y) (2-v)  -- inverse "velocity - 2"
    | otherwise           = (x, y) : bounce (w, h) (x, y') v'
  where
    maxY = h - radius
@@ -249,10 +256,10 @@ bouncingBalls el = do
     -- Set an event handler for clicks in the canvas
     canvas `onEvent` Click $ \evt -> do
       let (x, y) = mouseCoords evt
-          pos = (fromIntegral x, fromIntegral y)
+          pos = fixCoord (fromIntegral x, fromIntegral y)
+          fixCoord (x, y) = (x, y - 320) -- for some reason the y-coordinate is from the top of the browser window, not from the top of the pane
       balls <- readIORef state
       writeIORef state $ bounce (canWidth, canHeight) pos 0 : balls
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
-
