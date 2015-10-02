@@ -150,7 +150,7 @@ bounce (w, h) (x, y) v
    y'   = y + fromIntegral v
 
 step :: State -> State
-step = map (drop 1)
+step bs = [ps | _:ps <- bs]
 
 ballShape :: Ball -> Shape ()
 ballShape []      = return ()
@@ -228,3 +228,4 @@ bouncingBalls el = do
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
+
