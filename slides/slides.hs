@@ -146,7 +146,7 @@ end = verticallyCentered $ title "End of presentation."
 
 main :: IO ()
 main = do
-  deck <- createDeck def {transition = pan}
+  present_ def {transition = pan}
       [ --testbounce
         first
       , whatIsFP
@@ -158,10 +158,6 @@ main = do
       , bouncing
       , end
       ]
-  appendChild documentBody deck
-  enableDeck deck
-
-
 
 --------------------------------------------------------------------------------
 
