@@ -1,5 +1,33 @@
 % Functional Programming @ D&IT
 
+Funktionell programmering är ett väldigt kraftfullt verktyg för sådan problemlösning som låter oss fokusera på själva problemet snarare än på detaljer kring hur datorn ska utföra jobbet.
+
+Idag ser vi en ökad användning av funktionell programmering inom områden såsom telekommunikation, finansmarknad och web-programmering.
+(slide med företags-logo + haste-demo)
+
+ge en överblick över området och presentera några exempel på
+  resultat     (domän)
+  22m EmAx (inkl. företag och Haste-demo)
+    Haskell    - språket utvecklades delvis på Chalmers
+    Lava       (hårdvara) (fortfarande aktivt fält FP+Hårdvara, ICFP keynote (länk))
+    Obsidian   (grafikprocessor = GPU)
+    Feldspar   (signalbehandling och numeriska beräkningar) nämn RAWFP (Strategisk finansiering 25Mkr/5år),
+    Paradox    (motbevis!)           Proof-based testing (VR Koen),
+
+  8 PaJa
+    QuickCheck (testning)
+    Agda       (bevisverktyg)
+    GSS        (klimateffektforskning!)
+  7 [PaJa] kurser inom området (översikt) (  https://github.com/dtekcth/snd-kursgraf )
+  8 [PaJa] DSLsofMath
+
+----
+
+* Vad innebär området i ett större perspektiv?
+* Vilken spetsforskning inom området bedriver vi här på Chalmers och Göteborgs Universitet?
+* I vilka kurser lär jag mig mer om området?
+
+
 
 Vad är funktionell programmering (för oss)?
 ================================================================

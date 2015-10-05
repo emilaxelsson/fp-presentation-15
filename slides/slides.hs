@@ -180,7 +180,7 @@ bounce (w, h) (x, y) v
    y'   = y + fromIntegral v
 
 step :: State -> State
-step bs = [ps | _:ps <- bs]
+step bs = [ps | _:ps <- bs] -- Note that this also removes empty lists (finished balls)
 
 ballShape :: Ball -> Shape ()
 ballShape []      = return ()
@@ -254,7 +254,7 @@ bouncingBalls el = do
       let (x, y) = mouseCoords evt
           pos = fixCoord (fromIntegral x, fromIntegral y)
 --          fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
-          fixCoord (x, y) = (x, y - 120) -- for 1024x768 presentation
+          fixCoord (x, y) = (x, y - 185) -- for 1024x768 presentation in full-screen mode
 
       -- For some reason the y-coordinate is from the top of the
       -- browser window, not from the top of the pane. The adjustment
