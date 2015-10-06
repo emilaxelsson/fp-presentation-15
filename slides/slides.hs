@@ -15,10 +15,22 @@ import Haste.Deck
 -- Helper functions
 
 title :: Slide -> Slide
-title = sized 0.2 . centered . color "blue" . fontSize (Pt 42)
+title = sized 0.2 . groupAttrs atts . centered . color "blue" . fontSize (Pt 42)
+  where
+    atts =
+      [ style "margin-left"  =: "1em"
+      , style "margin-right" =: "1em"
+      , style "margin-top"   =: "1em"
+      ]
 
 smallTitle :: Slide -> Slide
-smallTitle = centered . color "blue" . fontSize (Pt 38)
+smallTitle = sized 0.18 . groupAttrs atts . centered . color "blue" . fontSize (Pt 38)
+  where
+    atts =
+      [ style "margin-left"  =: "1em"
+      , style "margin-right" =: "1em"
+      , style "margin-top"   =: "1em"
+      ]
 
 normalSize :: Slide -> Slide
 normalSize = fontSize (Pt 28)
@@ -127,7 +139,7 @@ haste1 = column
 
 haste2 :: Slide
 haste2 = column
-    [ sized 0.15 $ smallTitle "Haste-exempel: programmerbara slides"
+    [ smallTitle "Haste-exempel: programmerbara slides"
     , content $ list Unnumbered
         [ "Dessa slides är ett Haskell-program som just nu körs i webb-läsaren!"
         , "Skrivna mha. Antons `haste-deck` bibliotek: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
@@ -137,13 +149,64 @@ haste2 = column
 
 bouncing :: Slide
 bouncing = column
-    [ sized 0.08 $ title "Running Haskell code in the slides"
+    [ sized 0.08 $ title "Köra Haskell-kod i slides"
     , sized 0.08 ""
     , sized 0.01 $ verticallyCentered $ centered $ fontSize (Pt 22) "\"Bouncing balls\""
     , verticallyCentered $ centered $ lift $ do
           e <- newElem "div"
           bouncingBalls e
           return e
+    ]
+
+fpResearch :: Slide
+fpResearch = column
+    [ sized 0.25 $ title "Tidiare och nuvarande forskning i FP-gruppen"
+    , smallContent $ list Unnumbered
+        [ "Haskell (!)"
+        , sublist Unnumbered "Domänspecifika programmeringsspråk"
+            [ "Lava (för hårdvara), Obsidian (GPU), Feldspar (signalbehandling), etc."
+            ]
+        , sublist Unnumbered "Testning och formell verifiering"
+            [ "QuickCheck (testning), SAT-lösare och bevisverktyg"
+            ]
+        , sublist Unnumbered "Typteori"
+            [ "Agda (funktionellt språk/bevisverktyg)"
+            ]
+        , "Klimateffektforskning"
+        ]
+    ]
+
+haskell :: Slide
+haskell = column
+    [ title "Vår forskning: Haskell"
+    , content $ list Unnumbered
+        [ sublist Unnumbered "Medlemmar från vår grupp har"
+            [ "Bidragit till utformandet av Haskell"
+            , "Varit med i kommitéer för Haskell-standarder"
+            , "Utvecklat den första Haskell-kompilatorn till native-kod"
+            ]
+        ]
+    ]
+
+dsl_Lava :: Slide
+dsl_Lava = column
+    [ smallTitle "Vår forskning: Domänspecifika språk"
+    , content $ list Unnumbered
+        [ sublist Unnumbered "Lava"
+            [ "Funktionell hårdvarubeskrivning"
+            , "Exempel"
+            ]
+        ]
+    ]
+
+dsl_Feldspar :: Slide
+dsl_Feldspar = column
+    [ smallTitle "Vår forskning: Domänspecifika språk"
+    , content $ list Unnumbered
+        [ sublist Unnumbered "Feldspar"
+            [ "Funktionellt språk för signalbehandling och numeriska beräkningar"
+            ]
+        ]
     ]
 
 testbounce :: Slide
@@ -167,6 +230,10 @@ main = do
       , haste1
       , haste2
       , bouncing
+      , fpResearch
+      , haskell
+      , dsl_Lava
+      , dsl_Feldspar
       , end
       ]
 
