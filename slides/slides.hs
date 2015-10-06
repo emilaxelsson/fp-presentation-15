@@ -76,50 +76,64 @@ whatIsFP = column
 
 whatIsFP2 :: Slide
 whatIsFP2 = column
-    [ title "Vad är funktionell programmering (för oss)?"
-    , content $ column
-        [ "Några funktionella språk:"
-        , list Unnumbered
+    [ sized 0.25 $ title "Vad är funktionell programmering (för oss)?"
+    , content $ list Unnumbered
+        [ sublist Unnumbered "Några funktionella språk:"
             [ "Lisp, Scheme, Clojure, JavaScript, Erlang"
             , "Haskell, ML, Clean, Miranda och F#"
             ]
         ]
-    , ""
+    ]
+
+companies :: Slide
+companies = column
+    [ title "FP inom industrin"
+    , smallContent $ list Unnumbered
+        [ "Funktionell programmering blir allt vanligare i industrin"
+        , sublist Unnumbered "Används bl.a. inom"
+            [ "Telekommunikation (Erlang)"
+            , "Finansmarknad (Haskell, OCaml, F#)"
+            , "Web-programmering"
+            ]
+        , sublist Unnumbered "Nyckelegenskaper"
+            [ "Produktivitet: koncis kod"
+            , "Parallellisering: funktioner kan beräknas parallellt utan att störa varandra"
+            , "Korrekthet: tydlig kod, testbarhet och starka typsystem"
+            ]
+        ]
     ]
 
 logos :: Slide
 logos = column
-    [ sized 0.15 $ title "Företag relaterade till FP-gruppen"
-    , centered $ withAttrs atts $ image "../AllLogos.png"
+    [ sized 0.1 ""
+    , centered $ withAttrs ["width" =: "850"] $ image "../AllLogos.png"
     ]
-  where
-    atts = ["width" =: "850"]
 
 haste1 :: Slide
 haste1 = column
     [ title "Praktisk FP: Haste-kompilatorn"
     , content $ list Unnumbered
-        [ sublist Unnumbered "Haste: en Haskell-till-Javascript kompilator"
+        [ sublist Unnumbered "Haste: en Haskell-till-Javascript-kompilator"
             [ "Programmera webb-sidor i Haskell"
             ]
         , sublist Unnumbered "Utvecklat av en tidigare DV-student, Anton Ekblad"
             [ "... som för närvarande är doktorand i vår grupp"
+            , "Började som ett kandidatprojekt!"
             ]
-        , "Some more cool facts about Haste..."
         ]
+    , ""
+    , centered $ content "[haste-lang.org](http://haste-lang.org)"
     ]
 
 haste2 :: Slide
 haste2 = column
-    [ title "Haste-exempel: programmerbara slides"
+    [ sized 0.15 $ smallTitle "Haste-exempel: programmerbara slides"
     , content $ list Unnumbered
         [ "Dessa slides är ett Haskell-program som just nu körs i webb-läsaren!"
         , "Skrivna mha. Antons `haste-deck` bibliotek: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
         ]
+    , centered $ image "code.png"
     ]
-
-haste3 :: Slide
-haste3 = ""
 
 bouncing :: Slide
 bouncing = column
@@ -148,10 +162,10 @@ main = do
         first
       , whatIsFP
       , whatIsFP2
+      , companies
       , logos
       , haste1
       , haste2
-      , haste3
       , bouncing
       , end
       ]
