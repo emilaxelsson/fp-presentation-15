@@ -15,10 +15,22 @@ import Haste.Deck
 -- Helper functions
 
 title :: Slide -> Slide
-title = sized 0.2 . centered . color "blue" . fontSize (Pt 42)
+title = sized 0.2 . groupAttrs atts . centered . color "blue" . fontSize (Pt 42)
+  where
+    atts =
+      [ style "margin-left"  =: "1em"
+      , style "margin-right" =: "1em"
+      , style "margin-top"   =: "1em"
+      ]
 
 smallTitle :: Slide -> Slide
-smallTitle = centered . color "blue" . fontSize (Pt 38)
+smallTitle = groupAttrs atts . centered . color "blue" . fontSize (Pt 38)
+  where
+    atts =
+      [ style "margin-left"  =: "1em"
+      , style "margin-right" =: "1em"
+      , style "margin-top"   =: "1em"
+      ]
 
 normalSize :: Slide -> Slide
 normalSize = fontSize (Pt 28)
