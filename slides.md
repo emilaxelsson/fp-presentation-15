@@ -1,27 +1,4 @@
-% Functional Programming @ D&IT
-
-Funktionell programmering är ett väldigt kraftfullt verktyg för sådan problemlösning som låter oss fokusera på själva problemet snarare än på detaljer kring hur datorn ska utföra jobbet.
-
-Idag ser vi en ökad användning av funktionell programmering inom områden såsom telekommunikation, finansmarknad och web-programmering.
-(slide med företags-logo + haste-demo)
-
-ge en överblick över området och presentera några exempel på
-  resultat     (domän)
-  22m EmAx (inkl. företag och Haste-demo)
-    Haskell    - språket utvecklades delvis på Chalmers
-    Lava       (hårdvara) (fortfarande aktivt fält FP+Hårdvara, ICFP keynote (länk))
-    Obsidian   (grafikprocessor = GPU)
-    Feldspar   (signalbehandling och numeriska beräkningar) nämn RAWFP (Strategisk finansiering 25Mkr/5år),
-    Paradox    (motbevis!)           Proof-based testing (VR Koen),
-
-  8 PaJa
-    QuickCheck (testning)
-    Agda       (bevisverktyg)
-    GSS        (klimateffektforskning!)
-  7 [PaJa] kurser inom området (översikt) (  https://github.com/dtekcth/snd-kursgraf )
-  8 [PaJa] DSLsofMath
-
-----
+% Funktionell Programmering @ D&IT-inst.
 
 * Vad innebär området i ett större perspektiv?
 * Vilken spetsforskning inom området bedriver vi här på Chalmers och Göteborgs Universitet?
@@ -94,24 +71,54 @@ Länkar:
 
 
 
+Varför lära sig om Funktionell Programmering?
+=====================
+
+* Rapid prototyping = det går *snabbt* att få fungerande program
+* strong type system = datorn hjälper dig att göra rätt
+* powerful design patterns = programsnuttar kan återanvändas mycket flexibelt
+* conceptual clarity = tydlig mening
+* industrial strength compilers = mycket bra kompilatorer
+* promising parallelisation properties = lovande egenskaper för parallellisering
+
+
 I vilka kurser lär jag mig mer om Funktionell Programmering?
 ================
 
 * Kandidatnivån (första tre åren):
     * LP1: IFP = [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/), Emil Axelsson
     * LP2: FP = [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/), Dave Sands
-    * LP3: DSLM = [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath), Cezar Ionescu, Patrik Jansson
-    * (LP3: ProgPara = [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/), Jean-Philippe Bernardy, inställd våren 2015)
-    * LP3-4: Kandidatarbete
-    * ...
+    * LP3: DSLM = [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath), Ionescu & Jansson
+    * (LP3: ProgPara = [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/), Bernardy, inställd våren 2015)
+    * LP3-4: Kandidatarbete - beroende på projektval
 * Masternivån (sista två åren):
-    * LP1: Types = [http://www.cse.chalmers.se/edu/year/2013/course/DAT140_Types/](http://www.cse.chalmers.se/edu/course/DAT140/), Thierry Coquand, Peter Dybjer, Ulf Norell
-    * LP2: PLT = [Andreas Abel](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/)
+    * LP1: Types = [Types for Programs and Proofs](http://www.cse.chalmers.se/edu/course/DAT140/), Coquand, Dybjer, Norell
+    * LP2: PLT = [Programming Language Technology](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel
     * LP2: Models = [Models of Computation](https://sites.google.com/site/modelsofcomputation/)
     * LP3: AFP = [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson
     * LP4: PFP = [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/), Mary Sheeran & John Hughes
     * LP4: Comp = [Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren
     * ...
+
+Mer om kurserna i de tre första åren
+=============
+
+* (Introduktion till) Funktionell programmering (År 1, LP1 för D, DV) och valfri för IT (År 3, LP2)
+    * Programspråket Haskell, rekursion, datatyper, testning, ...
+* År 2-3: DSLM = [Matematikens domänspecifika språk](https://github.com/DSLsofMath), Cezar Ionescu, Patrik Jansson
+    * Exempel på domänspecifika språk: datum, algebraiska uttryck, integraler
+    * Förstå centrala matematiska begrepp genom programmering och tvärtom!
+    * Fokus på lämplig notation för matematik (därav "språk" i titeln)
+    * Genomföra och räkna med bevis
+* AFP = [Avancerad funktionell programmering](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson
+    * Haskell i industri och teori
+    * Domänspecifika språk som programvaruarkitektur
+    * Matematik möter maskinen: Funktorer, monader, transformer
+    * Testning och bevis
+* PLT = [Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel
+    * Hur implementerar man ett programspråk? (fokus på "front-end")
+* Comp = [Kompilatorkonstruktion](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren
+    * Hur implementerar man ett programspråk? (fokus på "back-end")
 
 
 
