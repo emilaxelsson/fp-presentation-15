@@ -30,7 +30,7 @@ content :: Slide -> Slide
 content = groupAttrs atts . normalSize
   where
     atts =
-      [ style "margin-left"  =: "6em"
+      [ style "margin-left"  =: "4em"
       , style "margin-right" =: "4em"
       , style "line-height"  =: "4em"
       ]
@@ -39,7 +39,7 @@ smallContent :: Slide -> Slide
 smallContent = groupAttrs atts . smallSize
   where
     atts =
-      [ style "margin-left"  =: "6em"
+      [ style "margin-left"  =: "4em"
       , style "margin-right" =: "4em"
       , style "line-height"  =: "3em"
       ]
