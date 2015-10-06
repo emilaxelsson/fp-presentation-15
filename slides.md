@@ -2,8 +2,8 @@
 
 Funktionell programmering är ett väldigt kraftfullt verktyg för sådan problemlösning som låter oss fokusera på själva problemet snarare än på detaljer kring hur datorn ska utföra jobbet.
 
-Idag ser vi en ökad användning av funktionell programmering inom områden såsom telekommunikation, finansmarknad och web-programmering.
-(slide med företags-logo + haste-demo)
+DONE Idag ser vi en ökad användning av funktionell programmering inom områden såsom telekommunikation, finansmarknad och web-programmering.
+DONE (slide med företags-logo + haste-demo)
 
 ge en överblick över området och presentera några exempel på
   resultat     (domän)
