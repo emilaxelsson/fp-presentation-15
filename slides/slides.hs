@@ -49,13 +49,10 @@ smallContent = groupAttrs atts . smallSize
 
 first :: Slide
 first = verticallyCentered $ column
-    [ ""
-    , ""
+    [ sized 0.3 ""
     , title "Functional Programming\n @ D&IT"
     , centered $ normalSize "Patrik Jansson and Emil Axelsson"
-    , ""
-    , ""
-    , ""
+    , sized 0.4 ""
     ]
 
 whatIsFP :: Slide
@@ -92,7 +89,7 @@ whatIsFP2 = column
 
 logos :: Slide
 logos = column
-    [ sized 0.15 $ title "Loads of FP-related companies"
+    [ sized 0.15 $ title "Företag relaterade till FP-gruppen"
     , centered $ withAttrs atts $ image "../AllLogos.png"
     ]
   where
@@ -100,13 +97,13 @@ logos = column
 
 haste1 :: Slide
 haste1 = column
-    [ title "FP in action: the Haste compiler"
+    [ title "Praktisk FP: Haste-kompilatorn"
     , content $ list Unnumbered
-        [ sublist Unnumbered "Haste: a Haskell to Javascript compiler"
-            [ "Program web pages using Haskell"
+        [ sublist Unnumbered "Haste: en Haskell-till-Javascript kompilator"
+            [ "Programmera webb-sidor i Haskell"
             ]
-        , sublist Unnumbered "Developed by former DV student Anton Ekblad"
-            [ "Currently a Ph.D. student in our group"
+        , sublist Unnumbered "Utvecklat av en tidigare DV-student, Anton Ekblad"
+            [ "... som för närvarande är doktorand i vår grupp"
             ]
         , "Some more cool facts about Haste..."
         ]
@@ -114,10 +111,10 @@ haste1 = column
 
 haste2 :: Slide
 haste2 = column
-    [ title "Haste example: presentation slides"
+    [ title "Haste-exempel: programmerbara slides"
     , content $ list Unnumbered
-        [ "These slides are actually a Haskell program running in my browser"
-        , "Written using Anton's `haste-deck` library: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
+        [ "Dessa slides är ett Haskell-program som just nu körs i webb-läsaren!"
+        , "Skrivna mha. Antons `haste-deck` bibliotek: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
         ]
     ]
 
