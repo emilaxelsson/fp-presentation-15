@@ -215,6 +215,72 @@ testbounce = lift $ do
           bouncingBalls e
           return e
 
+
+varförFP :: Slide
+varförFP = column
+    [ smallTitle "Varför lära sig om Funktionell Programmering?"
+    , content $ list Unnumbered
+        [ "Rapid prototyping = det går *snabbt* att få fungerande program"
+        , "strong type system = datorn hjälper dig att göra rätt"
+        , "powerful design patterns = programsnuttar kan återanvändas mycket flexibelt"
+        , "conceptual clarity = tydlig mening"
+        , "industrial strength compilers = mycket bra kompilatorer"
+        , "promising parallelisation properties = lovande egenskaper för parallellisering"
+        ]
+    ]
+contentLU = content . list Unnumbered
+sublistU = sublist Unnumbered
+
+kurserFP1 :: Slide
+kurserFP1 = column
+    [ smallTitle "I vilka kurser lär jag mig mer om Funktionell Programmering?"
+    , contentLU
+      [ sublistU "Kandidatnivån (första tre åren):"
+        [ "LP1: IFP = [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/), Emil Axelsson"
+        , "LP2: FP = [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/), Dave Sands"
+        , "LP3: DSLM = [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath), Ionescu & Jansson"
+        , "(LP3: ProgPara = [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/), Bernardy, inställd våren 2015)"
+        , "LP3-4: Kandidatarbete - beroende på projektval"
+        ]
+      , sublistU "Masternivån (sista två åren):"
+        [ "LP1: Types = [Types for Programs and Proofs](http://www.cse.chalmers.se/edu/course/DAT140/), Coquand, Dybjer, Norell"
+        , "LP2: PLT = [Programming Language Technology](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel"
+        , "LP2: Models = [Models of Computation](https://sites.google.com/site/modelsofcomputation/), Bengt Nordström -> Nils Anders Danielsson"
+        , "LP3: AFP = [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson -> Alejandro Russo"
+        , "LP4: PFP = [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/), Mary Sheeran & John Hughes"
+        , "LP4: Comp = [Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren"
+        , "..."
+        ]
+      ]
+    ]
+
+kurserFP2 :: Slide
+kurserFP2 = column
+    [ smallTitle "Mer om kurserna i de tre första åren"
+    , contentLU
+      [ sublistU "(Introduktion till) Funktionell programmering (År 1, LP1 för D, DV) och valfri för IT (År 3, LP2)"
+        [ "Programspråket Haskell, rekursion, datatyper, testning, ..." ]
+      , sublistU "År 2-3: DSLM = [Matematikens domänspecifika språk](https://github.com/DSLsofMath), Ionescu & Jansson"
+          [ "Exempel på domänspecifika språk: datum, algebraiska uttryck, integraler"
+          , "Förstå centrala matematiska begrepp genom programmering och tvärtom!"
+          , "Fokus på lämplig notation för matematik (därav \"språk\" i titeln)"
+          , "Genomföra och räkna med bevis"
+          ]
+      , sublistU "AFP = [Avancerad funktionell programmering](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson"
+          [ "Haskell i industri och teori"
+          , "Domänspecifika språk som programvaruarkitektur"
+          , "Matematik möter maskinen: Funktorer, monader, transformer"
+          , "Testning och bevis"
+          ]
+      , sublistU "PLT = [Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel"
+          [ "Hur implementerar man ett programspråk? (fokus på \"front-end\")" ]
+      , sublistU "Comp = [Kompilatorkonstruktion](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren"
+          [ "Hur implementerar man ett programspråk? (fokus på \"back-end\")" ]
+      ]
+    ]
+
+
+
 end :: Slide
 end = verticallyCentered $ title "End of presentation."
 
@@ -234,6 +300,9 @@ main = do
       , haskell
       , dsl_Lava
       , dsl_Feldspar
+      , varförFP
+      , kurserFP1
+      , kurserFP2
       , end
       ]
 
