@@ -18,3 +18,9 @@ ge en överblick över området och presentera några exempel på
     GSS        (klimateffektforskning!)
   7 [PaJa] kurser inom området (översikt) (  https://github.com/dtekcth/snd-kursgraf )
   8 [PaJa] DSLsofMath
+
+----------------------------------------------------------------
+
+Presentation technology in HB4:
+* a projector supporting 1680x1050 pixels
+* 3*3 blackboards!
