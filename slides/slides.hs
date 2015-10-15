@@ -308,7 +308,7 @@ main = do
 
 --------------------------------------------------------------------------------
 
-type Size = (Double, Double)
+type Height = Double
 
 radius :: Double
 radius = 15
@@ -316,11 +316,11 @@ radius = 15
 type Ball  = [Point]
 type State = [Ball]
 
-bounce :: Size -> Point -> Int -> Ball
-bounce (w, h) (x, y) v
+bounce :: Height -> Point -> Int -> Ball
+bounce h (x, y) v
    | v == 0 && y >= maxY = replicate 20 (x, y)
-   | y' > maxY           = bounce (w, h) (x, y) (2-v)  -- inverse "velocity - 2"
-   | otherwise           = (x, y) : bounce (w, h) (x, y') v'
+   | y' > maxY           = bounce h (x, y) (2-v)  -- inverse "velocity - 2"
+   | otherwise           = (x, y) : bounce h (x, y') v'
  where
    maxY = h - radius
    v'   = v + 1
@@ -413,7 +413,7 @@ bouncingBalls el = do
       -- https://github.com/valderman/haste-compiler/search?utf8=%E2%9C%93&q=offsetTop
 
       balls <- readIORef state
-      writeIORef state $ bounce (canWidth, canHeight) pos 0 : balls
+      writeIORef state $ bounce canHeight pos 0 : balls
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
