@@ -282,7 +282,8 @@ kurserFP2 = column
 
 
 end :: Slide
-end = verticallyCentered $ title "End of presentation."
+end = verticallyCentered $
+    centered $ color "blue" $ fontSize (Pt 42) "End of presentation."
 
 main :: IO ()
 main = do
