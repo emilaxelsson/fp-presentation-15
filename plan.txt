@@ -1,3 +1,33 @@
+(Josef:)
+
+Vad är FP?
+
+Praktisk FP: Haste
+
+FP projekt i Göteborg
+
+  * Haskell
+  * DSL
+      - Lava, Feldspar, Obsidian, Wired
+  * Testning och formell verifiering
+      - QuickCheck (testning), SAT-lösare och bevisverktyg
+  * Datasäkerhet
+
+(Emil:)
+
+  * Diverse
+      - Programmeringstekniker/bibliotek
+      - Klimateffektforskning
+      - Funktionella programspråk (Agda, etc.)
+
+FP i industrin
+
+FP-kurser i GBG
+
+
+
+----------------------------------------------------------------
+
 Funktionell programmering är ett väldigt kraftfullt verktyg för sådan problemlösning som låter oss fokusera på själva problemet snarare än på detaljer kring hur datorn ska utföra jobbet.
 
 DONE Idag ser vi en ökad användning av funktionell programmering inom områden såsom telekommunikation, finansmarknad och web-programmering.
