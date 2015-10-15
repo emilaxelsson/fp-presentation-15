@@ -160,7 +160,7 @@ bouncing = column
 
 fpResearch :: Slide
 fpResearch = column
-    [ sized 0.25 $ title "Tidiare och nuvarande forskning i FP-gruppen"
+    [ sized 0.25 $ title "Tidigare och nuvarande forskning i FP-gruppen"
     , smallContent $ list Unnumbered
         [ "Haskell (!)"
         , sublist Unnumbered "Domänspecifika programmeringsspråk"
