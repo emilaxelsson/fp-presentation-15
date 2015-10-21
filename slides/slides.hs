@@ -14,22 +14,24 @@ import Haste.Deck
 --------------------------------------------------------------------------------
 -- Helper functions
 
+title' :: Slide -> Slide
+title' = centered . color "blue" . fontSize (Pt 42)
+
 title :: Slide -> Slide
-title = sized 0.2 . groupAttrs atts . centered . color "blue" . fontSize (Pt 42)
+title = sized 0.2 . groupAttrs atts . title'
   where
     atts =
       [ style "margin-left"  =: "1em"
       , style "margin-right" =: "1em"
-      , style "margin-top"   =: "1em"
       ]
 
 smallTitle :: Slide -> Slide
-smallTitle = sized 0.18 . groupAttrs atts . centered . color "blue" . fontSize (Pt 38)
+smallTitle =
+    sized 0.18 . groupAttrs atts . centered . color "blue" . fontSize (Pt 38)
   where
     atts =
       [ style "margin-left"  =: "1em"
       , style "margin-right" =: "1em"
-      , style "margin-top"   =: "1em"
       ]
 
 normalSize :: Slide -> Slide
@@ -61,10 +63,8 @@ smallContent = groupAttrs atts . smallSize
 
 first :: Slide
 first = verticallyCentered $ column
-    [ sized 0.3 ""
-    , title "Functional Programming\n @ D&IT"
-    , centered $ normalSize "Patrik Jansson and Emil Axelsson"
-    , sized 0.4 ""
+    [ sized 0.25 $ title' "Functional Programming\n @ D&IT"
+    , sized 0.2 $ centered $ normalSize "Patrik Jansson and Emil Axelsson"
     ]
 
 whatIsFP :: Slide
@@ -282,8 +282,7 @@ kurserFP2 = column
 
 
 end :: Slide
-end = verticallyCentered $
-    centered $ color "blue" $ fontSize (Pt 42) "End of presentation."
+end = verticallyCentered $ title' "End of presentation."
 
 main :: IO ()
 main = do
