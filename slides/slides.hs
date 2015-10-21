@@ -211,16 +211,6 @@ dsl_Lava3 = column
     , sized 0.25 $ centered $ withAttrs ["width" =: "1000"] $ image "PP_256.png"
     ]
 
-dsl_Feldspar :: Slide
-dsl_Feldspar = column
-    [ smallTitle "Vår forskning: Domänspecifika språk"
-    , content $ list Unnumbered
-        [ sublist Unnumbered "Feldspar"
-            [ "Funktionellt språk för signalbehandling och numeriska beräkningar"
-            ]
-        ]
-    ]
-
 companies :: Slide
 companies = column
     [ title "FP inom industrin"
@@ -360,7 +350,6 @@ main = do
       , dsl_Lava1
       , dsl_Lava2
       , dsl_Lava3
-      , dsl_Feldspar
       , companies
       , logos
       , varförFP
