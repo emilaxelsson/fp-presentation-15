@@ -221,40 +221,57 @@ varförFP = column
         , "promising parallelisation properties = lovande egenskaper för parallellisering"
         ]
     ]
+
 contentLU = content . list Unnumbered
 sublistU = sublist Unnumbered
 
 kurserFP1 :: Slide
 kurserFP1 = column
-    [ smallTitle "I vilka kurser lär jag mig mer om Funktionell Programmering?"
-    , contentLU
+    [ sized 0.23 $ smallTitle "I vilka kurser lär jag mig mer om Funktionell Programmering?"
+    , smallContent $ list Unnumbered
       [ sublistU "Kandidatnivån (första tre åren):"
-        [ "LP1: IFP = [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/), Emil Axelsson"
-        , "LP2: FP = [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/), Dave Sands"
-        , "LP3: DSLM = [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath), Ionescu & Jansson"
-        , "(LP3: ProgPara = [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/), Bernardy, inställd våren 2015)"
-        , "LP3-4: Kandidatarbete - beroende på projektval"
-        ]
-      , sublistU "Masternivån (sista två åren):"
-        [ "LP1: Types = [Types for Programs and Proofs](http://www.cse.chalmers.se/edu/course/DAT140/), Coquand, Dybjer, Norell"
-        , "LP2: PLT = [Programming Language Technology](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel"
-        , "LP2: Models = [Models of Computation](https://sites.google.com/site/modelsofcomputation/), Bengt Nordström -> Nils Anders Danielsson"
-        , "LP3: AFP = [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson -> Alejandro Russo"
-        , "LP4: PFP = [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/), Mary Sheeran & John Hughes"
-        , "LP4: Comp = [Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren"
-        , "..."
+        [ "**LP1:** IFP = [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/),\n Emil Axelsson → Dave Sands"
+        , "**LP2:** FP = [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/), Dave Sands"
+        , "**LP3:** DSLM = [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath),\n Ionescu & Jansson"
+        , "(**LP3:** ProgPara = [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/),\n Bernardy, inställd våren 2015)"
+        , "**LP3-4:** Kandidatarbete &ndash; beroende på projektval"
         ]
       ]
     ]
 
 kurserFP2 :: Slide
 kurserFP2 = column
+    [ sized 0.23 $ smallTitle "I vilka kurser lär jag mig mer om Funktionell Programmering?"
+    , smallContent $ list Unnumbered
+      [ sublistU "Masternivån (sista två åren):"
+        [ "**LP1:** Types = [Types for Programs and Proofs](http://www.cse.chalmers.se/edu/course/DAT140/),\n Coquand, Dybjer, Norell"
+        , "**LP2:** PLT = [Programming Language Technology](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/),\n Andreas Abel"
+        , "**LP2:** Models = [Models of Computation](https://sites.google.com/site/modelsofcomputation/),\n Bengt Nordström → Nils Anders Danielsson"
+        , "(forts. nästa sida)"
+        ]
+      ]
+    ]
+
+kurserFP3 :: Slide
+kurserFP3 = column
+    [ sized 0.23 $ smallTitle "I vilka kurser lär jag mig mer om Funktionell Programmering?"
+    , smallContent $ list Unnumbered
+      [ sublistU "Masternivån (sista två åren):"
+        [ "**LP3:** AFP = [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/),\n Patrik Jansson → Alejandro Russo"
+        , "**LP4:** PFP = [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/),\n Mary Sheeran & John Hughes"
+        , "**LP4:** Comp = [Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/),\n Josef Svenningsson → Thomas Hallgren"
+        ]
+      ]
+    ]
+
+kurserFP4 :: Slide
+kurserFP4 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
-    , contentLU
-      [ sublistU "(Introduktion till) Funktionell programmering (År 1, LP1 för D, DV) och valfri för IT (År 3, LP2)"
-        [ "Programspråket Haskell, rekursion, datatyper, testning, ..." ]
-      , sublistU "År 2-3: DSLM = [Matematikens domänspecifika språk](https://github.com/DSLsofMath), Ionescu & Jansson"
-          [ "Exempel på domänspecifika språk: datum, algebraiska uttryck, integraler"
+    , smallContent $ list Unnumbered
+      [ sublistU "(Introduktion till) Funktionell programmering\n År 1, LP1 för D, DV och valfri för IT (År 3, LP2)"
+        [ "Språket Haskell, rekursion, datatyper, testning, ..." ]
+      , sublistU "År 2-3: DSLM = [Matematikens domänspecifika språk](https://github.com/DSLsofMath)\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ionescu & Jansson"
+          [ "Exempel på domänspecifika språk: datum, algebraiska\n &nbsp;&nbsp;&nbsp; uttryck, integraler"
           , "Förstå centrala matematiska begrepp genom programmering och tvärtom!"
           , "Fokus på lämplig notation för matematik (därav \"språk\" i titeln)"
           , "Genomföra och räkna med bevis"
@@ -267,7 +284,7 @@ kurserFP2 = column
           ]
       , sublistU "PLT = [Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel"
           [ "Hur implementerar man ett programspråk? (fokus på \"front-end\")" ]
-      , sublistU "Comp = [Kompilatorkonstruktion](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson -> Thomas Hallgren"
+      , sublistU "Comp = [Kompilatorkonstruktion](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson → Thomas Hallgren"
           [ "Hur implementerar man ett programspråk? (fokus på \"back-end\")" ]
       ]
     ]
@@ -295,6 +312,8 @@ main = do
       , varförFP
       , kurserFP1
       , kurserFP2
+      , kurserFP3
+      , kurserFP4
       , end
       ]
 
