@@ -105,7 +105,7 @@ haste1 = column
             [ "Programmera webb-sidor i Haskell"
             ]
         , sublist Unnumbered "Utvecklat av en tidigare DV-student, Anton Ekblad"
-            [ "... som för närvarande är doktorand i vår grupp"
+            [ "... som för närvarande är doktorand i FP gruppen"
             , "Började som ett kandidatprojekt!"
             ]
         ]
@@ -156,7 +156,7 @@ haskell :: Slide
 haskell = column
     [ title "Vår forskning: Haskell"
     , content $ list Unnumbered
-        [ sublist Unnumbered "Medlemmar från vår grupp har"
+        [ sublist Unnumbered "Medlemmar från FP gruppen har"
             [ "Bidragit till utformandet av Haskell"
             , "Varit med i kommitéer för Haskell-standarder"
             , "Utvecklat den första Haskell-kompilatorn till native-kod"
