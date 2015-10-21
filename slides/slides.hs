@@ -158,8 +158,8 @@ haskell = column
     , content $ list Unnumbered
         [ sublist Unnumbered "Medlemmar från FP gruppen har"
             [ "Bidragit till utformandet av Haskell"
-            , "Varit med i kommitéer för Haskell-standarder"
-            , "Utvecklat den första Haskell-kompilatorn till native-kod"
+            , "Varit med i kommitéer för Haskell-\nstandarder"
+            , "Utvecklat den första Haskell-kompilatorn\n till native-kod"
             ]
         ]
     ]
