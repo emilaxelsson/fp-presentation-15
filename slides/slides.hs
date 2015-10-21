@@ -97,30 +97,6 @@ whatIsFP2 = column
         ]
     ]
 
-companies :: Slide
-companies = column
-    [ title "FP inom industrin"
-    , smallContent $ list Unnumbered
-        [ "Funktionell programmering blir allt vanligare i industrin"
-        , sublist Unnumbered "Används bl.a. inom"
-            [ "Telekommunikation (Erlang)"
-            , "Finansmarknad (Haskell, OCaml, F#)"
-            , "Web-programmering"
-            ]
-        , sublist Unnumbered "Nyckelegenskaper"
-            [ "Produktivitet: koncis kod"
-            , "Parallellisering: funktioner kan beräknas parallellt utan att störa varandra"
-            , "Korrekthet: tydlig kod, testbarhet och starka typsystem"
-            ]
-        ]
-    ]
-
-logos :: Slide
-logos = column
-    [ sized 0.1 ""
-    , centered $ withAttrs ["width" =: "850"] $ image "../AllLogos.png"
-    ]
-
 haste1 :: Slide
 haste1 = column
     [ title "Praktisk FP: Haste-kompilatorn"
@@ -215,6 +191,29 @@ testbounce = lift $ do
           bouncingBalls e
           return e
 
+companies :: Slide
+companies = column
+    [ title "FP inom industrin"
+    , smallContent $ list Unnumbered
+        [ "Funktionell programmering blir allt vanligare i industrin"
+        , sublist Unnumbered "Används bl.a. inom"
+            [ "Telekommunikation (Erlang)"
+            , "Finansmarknad (Haskell, OCaml, F#)"
+            , "Web-programmering"
+            ]
+        , sublist Unnumbered "Nyckelegenskaper"
+            [ "Produktivitet: koncis kod"
+            , "Parallellisering: funktioner kan beräknas parallellt utan att störa varandra"
+            , "Korrekthet: tydlig kod, testbarhet och starka typsystem"
+            ]
+        ]
+    ]
+
+logos :: Slide
+logos = column
+    [ sized 0.1 ""
+    , centered $ withAttrs ["width" =: "850"] $ image "../AllLogos.png"
+    ]
 
 varförFP :: Slide
 varförFP = column
@@ -291,8 +290,6 @@ main = do
         first
       , whatIsFP
       , whatIsFP2
-      , companies
-      , logos
       , haste1
       , haste2
       , bouncing
@@ -300,6 +297,8 @@ main = do
       , haskell
       , dsl_Lava
       , dsl_Feldspar
+      , companies
+      , logos
       , varförFP
       , kurserFP1
       , kurserFP2
