@@ -246,7 +246,7 @@ kurserFP2 = column
     , smallContent $ list Unnumbered
       [ sublistU "Masternivån (sista två åren):"
         [ "**LP1:** [Types for Programs and Proofs](http://www.cse.chalmers.se/edu/course/DAT140/)"
-        , "**LP2:** [Programming Language Technology](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/)"
+        , "**LP2:** [Programming Language Technology](http://www.cse.chalmers.se/edu/course/DAT151/)"
         , "**LP2:** [Models of Computation](https://sites.google.com/site/modelsofcomputation/)"
         , "**LP3:** [Advanced Functional Programming](http://www.cse.chalmers.se/edu/course/afp/)"
         , "**LP4:** [Parallel Functional Programming](http://www.cse.chalmers.se/edu/course/DAT280_Parallel_Functional_Programming/)"
@@ -296,7 +296,7 @@ kurserFP6 :: Slide
 kurserFP6 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
     , smallContent $ list Unnumbered
-      [ sublistU "[Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/) <span style=\"font-size:80%\">(Andreas Abel)</span>"
+      [ sublistU "[Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151/) <span style=\"font-size:80%\">(Andreas Abel)</span>"
           [ "Hur implementerar man ett programspråk?"
           , "Fokus på \"front end\" &ndash; syntax, semantik, typer, etc.\n&nbsp;"
           ]
