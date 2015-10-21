@@ -27,7 +27,7 @@ title = sized 0.2 . groupAttrs atts . title'
 
 smallTitle :: Slide -> Slide
 smallTitle =
-    sized 0.18 . groupAttrs atts . centered . color "blue" . fontSize (Pt 38)
+    sized 0.15 . groupAttrs atts . centered . color "blue" . fontSize (Pt 38)
   where
     atts =
       [ style "margin-left"  =: "1em"
