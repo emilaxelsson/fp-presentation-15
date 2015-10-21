@@ -164,15 +164,51 @@ haskell = column
         ]
     ]
 
-dsl_Lava :: Slide
-dsl_Lava = column
-    [ smallTitle "Vår forskning: Domänspecifika språk"
-    , content $ list Unnumbered
-        [ sublist Unnumbered "Lava"
-            [ "Funktionell hårdvarubeskrivning"
-            , "Exempel"
+dsl_Lava1 :: Slide
+dsl_Lava1 = column
+    [ smallTitle "Vår forskning: Lava"
+    , sized 0.35 $ smallContent $ list Unnumbered
+        [ "Funktionell hårdvarubeskrivning"
+        , sublist Unnumbered "Exempel: parallella prefixnätverk"
+            [ "Vanliga i mikroprocessorer (adderare, etc.)"
+            , "Används för beräkningar på\n grafikprocessorer (GPU:er)"
             ]
         ]
+    , centered $ image "PP_20_abc.png"
+    ]
+
+sklanskyLava = centered $ fontSize (Pt 18) $ code
+    "sklansky op [a] = [a]           \n\
+    \sklansky op as  = bs ++ rs      \n\
+    \  where                         \n\
+    \    (as1,as2) = halveList as    \n\
+    \    bs = sklansky op as1        \n\
+    \    cs = sklansky op as2        \n\
+    \    bn = last bs                \n\
+    \    rs = [op (bn,c) | c <- cs]  \n"
+
+dsl_Lava2 :: Slide
+dsl_Lava2 = column
+    [ smallTitle "Vår forskning: Lava"
+    , sized 0.08 $ smallContent $ list Unnumbered ["Parallella prefixnätverk är rekursiva:"]
+    , sized 0.37 $ sklanskyLava
+    , sized 0.2 $ centered $ image "Sklansky_32.png"
+    , sized 0.2 $ smallContent "(Ett program genererar både hårdvara och bilden ovan!)"
+    ]
+
+dsl_Lava3 :: Slide
+dsl_Lava3 = column
+    [ smallTitle "Vår forskning: Lava"
+    , smallContent $ list Unnumbered
+        [ sublist Unnumbered "Det finns massor av sätt att dela upp parallella prefix\n rekursivt"
+            [ "Beslut påverkar: antal operatorer, nätverkets\n hastighet, etc."
+            ]
+        , sublist Unnumbered "Idé: Använd Haskell + Lava för att söka efter optimala\n nätverk (Mary Sheeran)"
+            [ "Resultat: Minsta möjliga prefixnätverken"
+            , "Skalar upp till nätverk av miljontals invärden"
+            ]
+        ]
+    , sized 0.25 $ centered $ withAttrs ["width" =: "1000"] $ image "PP_256.png"
     ]
 
 dsl_Feldspar :: Slide
@@ -321,7 +357,9 @@ main = do
       , bouncing
       , fpResearch
       , haskell
-      , dsl_Lava
+      , dsl_Lava1
+      , dsl_Lava2
+      , dsl_Lava3
       , dsl_Feldspar
       , companies
       , logos
