@@ -185,12 +185,6 @@ dsl_Feldspar = column
         ]
     ]
 
-testbounce :: Slide
-testbounce = lift $ do
-          e <- newElem "div"
-          bouncingBalls e
-          return e
-
 companies :: Slide
 companies = column
     [ title "FP inom industrin"
@@ -286,8 +280,7 @@ end = verticallyCentered $ title' "End of presentation."
 main :: IO ()
 main = do
   present_ def {transition = pan}
-      [ --testbounce
-        first
+      [ first
       , whatIsFP
       , whatIsFP2
       , haste1
