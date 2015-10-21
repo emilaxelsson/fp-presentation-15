@@ -259,28 +259,53 @@ kurserFP3 :: Slide
 kurserFP3 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
     , smallContent $ list Unnumbered
-      [ sublistU "(Introduktion till) Funktionell programmering\n År 1, LP1 för D, DV och valfri för IT (År 3, LP2)"
-        [ "Språket Haskell, rekursion, datatyper, testning, ..." ]
-      , sublistU "År 2-3: DSLM = [Matematikens domänspecifika språk](https://github.com/DSLsofMath)\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ionescu & Jansson"
-          [ "Exempel på domänspecifika språk: datum, algebraiska\n &nbsp;&nbsp;&nbsp; uttryck, integraler"
+      [ sublistU "[Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/) /\n [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/)\n År 1, LP1 för D, DV och valfri för IT (år 3, LP2)"
+        [ "Språket Haskell"
+        , "Rekursion, datatyper, testning, etc."
+        ]
+      ]
+    ]
+
+kurserFP4 :: Slide
+kurserFP4 = column
+    [ smallTitle "Mer om kurserna i de tre första åren"
+    , smallContent $ list Unnumbered
+      [ sublistU "År 2-3: [Matematikens domänspecifika språk](https://github.com/DSLsofMath)\n <span style=\"font-size:80%\">(Cesar Ionescu & Patrik Jansson)</span>"
+          [ "Exempel på domänspecifika språk: datum, algebraiska uttryck, integraler"
           , "Förstå centrala matematiska begrepp genom programmering och tvärtom!"
           , "Fokus på lämplig notation för matematik (därav \"språk\" i titeln)"
           , "Genomföra och räkna med bevis"
           ]
-      , sublistU "AFP = [Avancerad funktionell programmering](http://www.cse.chalmers.se/edu/course/afp/), Patrik Jansson"
-          [ "Haskell i industri och teori"
-          , "Domänspecifika språk som programvaruarkitektur"
-          , "Matematik möter maskinen: Funktorer, monader, transformer"
-          , "Testning och bevis"
-          ]
-      , sublistU "PLT = [Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/), Andreas Abel"
-          [ "Hur implementerar man ett programspråk? (fokus på \"front-end\")" ]
-      , sublistU "Comp = [Kompilatorkonstruktion](http://www.cse.chalmers.se/edu/course/TDA283/), Josef Svenningsson → Thomas Hallgren"
-          [ "Hur implementerar man ett programspråk? (fokus på \"back-end\")" ]
       ]
     ]
 
+kurserFP5 :: Slide
+kurserFP5 = column
+    [ smallTitle "Mer om kurserna i de tre första åren"
+    , smallContent $ list Unnumbered
+      [ sublistU "[Avancerad funktionell programmering](http://www.cse.chalmers.se/edu/course/afp/)\n <span style=\"font-size:80%\">(Patrik Jansson → Alejandro Russo)</span>"
+          [ "Haskell i industri och teori"
+          , "Domänspecifika språk som programvaruarkitektur"
+          , "Strukturera program mha. matematik: Funktorer,\n monader, transformer"
+          , "Testning och bevis"
+          ]
+      ]
+    ]
 
+kurserFP6 :: Slide
+kurserFP6 = column
+    [ smallTitle "Mer om kurserna i de tre första åren"
+    , smallContent $ list Unnumbered
+      [ sublistU "[Programspråksteknologi](http://www.cse.chalmers.se/edu/course/DAT151_Programming_Language_Technology/) <span style=\"font-size:80%\">(Andreas Abel)</span>"
+          [ "Hur implementerar man ett programspråk?"
+          , "Fokus på \"front end\" &ndash; syntax, semantik, typer, etc.\n&nbsp;"
+          ]
+      , sublistU "[Kompilatorkonstruktion](http://www.cse.chalmers.se/edu/course/TDA283/) <span style=\"font-size:80%\">(Josef Svenningsson → Thomas Hallgren)</span>"
+          [ "Hur implementerar man ett programspråk?"
+          , "Fokus på \"back end\" &ndash; kodgenerering, optimering, etc."
+          ]
+      ]
+    ]
 
 end :: Slide
 end = verticallyCentered $ title' "End of presentation."
@@ -304,7 +329,9 @@ main = do
       , kurserFP1
       , kurserFP2
       , kurserFP3
-      , kurserFP3
+      , kurserFP4
+      , kurserFP5
+      , kurserFP6
       , end
       ]
 
