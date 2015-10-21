@@ -64,7 +64,7 @@ smallContent = groupAttrs atts . smallSize
 first :: Slide
 first = verticallyCentered $ column
     [ sized 0.25 $ title' "Functional Programming\n @ D&IT"
-    , sized 0.2 $ centered $ normalSize "Patrik Jansson and Emil Axelsson"
+    , sized 0.2 $ centered $ normalSize "Josef Svenningsson and Emil Axelsson"
     ]
 
 whatIsFP :: Slide
