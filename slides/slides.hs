@@ -404,7 +404,7 @@ bounce h (x, y) v
    y'   = y + fromIntegral v
 
 step :: State -> State
-step bs = [ps | _:ps <- bs] -- Note that this also removes empty lists (finished balls)
+step bs = [ps | _:ps <- bs] -- This also removes empty lists (finished balls)
 
 ballShape :: Ball -> Shape ()
 ballShape []      = return ()
@@ -458,7 +458,6 @@ canWidth, canHeight :: Num a => a
 canWidth  = 700
 canHeight = 500
 
--- TODO: On my machine the balls start lower than the mouse click position (Patrik).
 bouncingBalls :: Elem -> IO HandlerInfo
 bouncingBalls el = do
     canvas <- mkCanvas canWidth canHeight
@@ -477,20 +476,33 @@ bouncingBalls el = do
     canvas `onEvent` Click $ \evt -> do
       let (x, y) = mouseCoords evt
           pos = fixCoord (fromIntegral x, fromIntegral y)
-          fixCoord (x, y) = (x, y - 185) -- for 1024x768 presentation in full-screen mode
-          -- fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
-          -- fixCoord (x, y) = (x, y - 350) -- for 1680x1050 pixels (HB4) in full-screen mode
-
-      -- For some reason the y-coordinate is from the top of the
-      -- browser window, not from the top of the pane. The adjustment
-      -- needed depends on where the canvas is in relation to the
-      -- browser window. There is something wrong in the tranlation of
-      -- the mouse coordinates (should use canvas.offsetTop but seems
-      -- not to work).
-      -- https://github.com/valderman/haste-compiler/search?utf8=%E2%9C%93&q=offsetTop
+          fixCoord (x, y) = (x, y-185)
 
       balls <- readIORef state
       writeIORef state $ bounce canHeight pos 0 : balls
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------
+
+-- For some reason the y-coordinate is from the top of the
+-- browser window, not from the top of the pane. The adjustment
+-- needed depends on where the canvas is in relation to the
+-- browser window. There is something wrong in the tranlation of
+-- the mouse coordinates (should use canvas.offsetTop but seems
+-- not to work).
+-- https://github.com/valderman/haste-compiler/search?utf8=%E2%9C%93&q=offsetTop
+
+-- fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
+-- fixCoord (x, y) = (x, y - 350) -- for 1680x1050 pixels (HB4) in full-screen mode
+
