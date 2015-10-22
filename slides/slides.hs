@@ -70,20 +70,16 @@ first = verticallyCentered $ column
 whatIsFP :: Slide
 whatIsFP = column
     [ title "Vad är funktionell programmering (för oss)?"
-    , smallContent $ list Unnumbered
-        [ "Mästerligt möte mellan matematik och maskin"
-        , sublist Unnumbered "Ett fantastiskt flexibelt språk för (inte bara matematiska) uttryck"
-            [ "Algebra: 3+4, 5/8, (17+3)*(2 + 1), ..."
-            , "Text: `reverse \"kirtaP\"`, `\"Hej \" ++ namn ++ \"!\"`, ..."
-            , "Funktioner: `area r = pi*r^2`, TODO: more examples"
-            , "Kombinationer: `let   area r = pi*r^2   in  (area 2) / (area 1)`"
-            ]
-        , "Korta och koncisa definitioner"
-        , "Typer som hjälper programmeraren att undvika fel"
-        , "Kontrollerade sidoeffekter ger bra parallellism och korrekthet"
+    , content $ list Unnumbered
+        [ "En programmeringsmetodik"
+        , sublist Unnumbered "Fokus på **abstraktion** och **komposition**"
+          [ "Skapa återanvändabara byggstenar"
+          , "Bygg program genom att komponera dessa byggstenar"
+          ]
+        , "Korta och koncisa program"
+        , "Program blir enklare att testa och verifiera"
+        , "Enklare att parallellisera"
         ]
-    , ""
-    , ""
     ]
 
 whatIsFP2 :: Slide
@@ -92,8 +88,14 @@ whatIsFP2 = column
     , content $ list Unnumbered
         [ sublist Unnumbered "Några funktionella språk:"
             [ "Lisp, Scheme, Clojure, JavaScript, Erlang"
-            , "Haskell, ML, Clean, Miranda och F#"
+            , "Haskell, ML och F#"
             ]
+        , sublist Unnumbered "Många språk har fått funktionella utökningar"
+          [ "Java, C#, C++"
+          ]
+        , sublist Unnumbered "Nya språk med starka funktionella influenser"
+          [ "Rust, Swift"
+          ]
         ]
     ]
 
@@ -145,9 +147,6 @@ fpResearch = column
         , sublist Unnumbered "Testning och formell verifiering"
             [ "QuickCheck (testning), SAT-lösare och bevisverktyg"
             ]
-        , sublist Unnumbered "Typteori"
-            [ "Agda (funktionellt språk/bevisverktyg)"
-            ]
         , "Klimateffektforskning"
         ]
     ]
@@ -171,7 +170,7 @@ dsl_Lava1 = column
         [ "Funktionell hårdvarubeskrivning"
         , sublist Unnumbered "Exempel: parallella prefixnätverk"
             [ "Vanliga i mikroprocessorer (adderare, etc.)"
-            , "Används för beräkningar på\n grafikprocessorer (GPU:er)"
+            , "Används för t.ex. sortering på\n grafikprocessorer (GPU:er)"
             ]
         ]
     , centered $ image "PP_20_abc.png"
@@ -210,6 +209,72 @@ dsl_Lava3 = column
         ]
     , sized 0.25 $ centered $ withAttrs ["width" =: "1000"] $ image "PP_256.png"
     ]
+
+säkerhet :: Slide
+säkerhet = column
+  [ smallTitle "Vår forskning: Säkerhetsbibliotek"
+  , content $ list Unnumbered
+    [ "I vissa program är det viktigt att säker information \
+      \inte läcker ut"
+    , "T.ex. password managers, bankapplikationer, etc."
+    , "I Haskell kan man implementera ett bibliotek som garanterar \
+      \att information inte läcks på ett olämpligt sätt."
+    , "För att uppnå samma sak i andra språk skulle man behöva \
+      \utöka eller ändra på språket."
+    ]
+  ]
+
+säkerhet2 :: Slide
+säkerhet2 = column
+  [ smallTitle "Vår forskning: Säkerhetsbibliotek"
+  , content $ list Unnumbered
+    [ "Exempel: Alice will skriva en password manager."
+    , "Ninjacoder tillhandahåller ett bibliotek för att varna för \
+      \svaga passwords.\nDet kommunicerar med en server för att \
+      \ibland hämta en lista med svaga passwords."
+    , "Hur kan Alice var säker på att ninjacoders biblioteket inte stjäl passwords?"
+    ]
+  , centered $ withAttrs ["width" =: "1000"] $ image "passwordninja.png"
+  ]
+
+säkerhet3 :: Slide
+säkerhet3 = column
+  [ smallTitle "Vår forskning: Säkerhetsbibliotek"
+  , content $ list Unnumbered
+    [ "I Haskell kan man använda typsystemet för att garantera att \
+      \undvika informationsläckor."
+    , "Vårt exempel:"
+    ]
+  , sized 0.2 $ centered $ fontSize (Pt 18) $ code "common :: Labeled Secret String -> MAC Public (MAC Secret Bool)"
+  , centered $ withAttrs ["width" =: "1000"] $ image "passwordninja.png"
+  ]
+
+sat :: Slide
+sat = column 
+  [ title "Vår forskning: Verifiering"
+  , content $ list Unnumbered
+    [ sublist Unnumbered "Vår grupp har utvecklat flera verktyg för verifiering"
+      [ "**MiniSAT**, en av världens bästa SAT-lösare\n\
+        \Används flitigt för att verifiera hårdvarukretsar."
+      , "**Paradox** och **Infinox** hittar modeller i första ordningens logik"
+      , "**Equinox** bevisar teorem i första ordningens logik"
+      ]
+    , "Alla dessa verktyg har vunnit flera tävlingar"
+    ]
+  ]
+
+sat2 :: Slide
+sat2 = column
+  [ title "Vår forskning: Verifiering"
+  , row
+      [ content $ centered $ sized 0.1 $ list Unnumbered
+        [ "SAT-lösare kan användas för att enkelt skriva en sudoku-lösare"
+        , "Beskriv hur ett korrekt sudoku-bräde ser ut"
+        , "SAT-lösaren hittar en lösning på brädet"
+        ]
+      , centered $ image "sudoku.png"
+      ]
+  ]
 
 companies :: Slide
 companies = column
@@ -350,6 +415,11 @@ main = do
       , dsl_Lava1
       , dsl_Lava2
       , dsl_Lava3
+      , sat
+      , sat2
+      , säkerhet
+      , säkerhet2
+      , säkerhet3
       , companies
       , logos
       , varförFP
