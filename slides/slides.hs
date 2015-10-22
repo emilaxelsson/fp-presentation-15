@@ -211,6 +211,25 @@ dsl_Lava3 = column
     , sized 0.25 $ centered $ withAttrs ["width" =: "1000"] $ image "PP_256.png"
     ]
 
+wired1 :: Slide
+wired1 = column
+    [ smallTitle "Vår forskning: Wired"
+    , smallContent $ list Unnumbered
+        [ sublist Unnumbered "Wired är en utökning av Lava för att utveckla ASICS\n (mikrochip)"
+            [ "Programmeraren kontrollerar layout och routing (ledningsdragning)"
+            ]
+        ]
+    , sized 0.14 $ smallContent "Parallellt prefix i Wired:"
+    , sized 0.4 $ centered $ withAttrs ["width" =: "950"] $ image "Sklansky_Wired_16.gif"
+    ]
+
+wired2 :: Slide
+wired2 = column
+    [ sized 0.12 $ smallContent $ "Parallellt prefix översatt till fabricerbar layout:"
+    , sized 0.36 $ centered $ withAttrs ["width" =: "600"] $ image "Sklansky_Wired_Enc.gif"
+    , sized 0.4 $ centered $ withAttrs ["width" =: "500"] $ image "Sklansky_Wired_Enc_Compacted.gif"
+    ]
+
 companies :: Slide
 companies = column
     [ title "FP inom industrin"
@@ -350,6 +369,8 @@ main = do
       , dsl_Lava1
       , dsl_Lava2
       , dsl_Lava3
+      , wired1
+      , wired2
       , companies
       , logos
       , varförFP
