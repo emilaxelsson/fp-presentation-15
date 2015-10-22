@@ -105,7 +105,7 @@ haste1 = column
             [ "Programmera webb-sidor i Haskell"
             ]
         , sublist Unnumbered "Utvecklat av en tidigare DV-student, Anton Ekblad"
-            [ "... som för närvarande är doktorand i FP gruppen"
+            [ "... för närvarande doktorand i FP gruppen"
             , "Började som ett kandidatprojekt!"
             ]
         ]
