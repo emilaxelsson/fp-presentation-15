@@ -477,9 +477,9 @@ bouncingBalls el = do
     canvas `onEvent` Click $ \evt -> do
       let (x, y) = mouseCoords evt
           pos = fixCoord (fromIntegral x, fromIntegral y)
---          fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
---          fixCoord (x, y) = (x, y - 185) -- for 1024x768 presentation in full-screen mode
-          fixCoord (x, y) = (x, y - 350) -- for 1680x1050 pixels (HB4) in full-screen mode
+          fixCoord (x, y) = (x, y - 185) -- for 1024x768 presentation in full-screen mode
+          -- fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
+          -- fixCoord (x, y) = (x, y - 350) -- for 1680x1050 pixels (HB4) in full-screen mode
 
       -- For some reason the y-coordinate is from the top of the
       -- browser window, not from the top of the pane. The adjustment
