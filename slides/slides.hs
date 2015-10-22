@@ -69,7 +69,7 @@ first = verticallyCentered $ column
 
 whatIsFP :: Slide
 whatIsFP = column
-    [ title "Vad är funktionell programmering (för oss)?"
+    [ title "Vad är funktionell programmering?"
     , content $ list Unnumbered
         [ "En programmeringsmetodik"
         , sublist Unnumbered "Fokus på **abstraktion** och **komposition**"
@@ -84,7 +84,7 @@ whatIsFP = column
 
 whatIsFP2 :: Slide
 whatIsFP2 = column
-    [ sized 0.25 $ title "Vad är funktionell programmering (för oss)?"
+    [ sized 0.25 $ title "Vad är funktionell programmering?"
     , content $ list Unnumbered
         [ sublist Unnumbered "Några funktionella språk:"
             [ "Lisp, Scheme, Clojure, JavaScript, Erlang"
@@ -119,7 +119,7 @@ haste2 :: Slide
 haste2 = column
     [ smallTitle "Haste-exempel: programmerbara slides"
     , content $ list Unnumbered
-        [ "Dessa slides är ett Haskell-program som just nu körs i webb-läsaren!"
+        [ "Dessa slides är ett Haskell-program som\n just nu körs i webb-läsaren!"
         , "Skrivna mha. Antons `haste-deck` bibliotek: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
         ]
     , centered $ image "code.png"
@@ -138,11 +138,11 @@ bouncing = column
 
 fpResearch :: Slide
 fpResearch = column
-    [ sized 0.25 $ title "Tidigare och nuvarande forskning i FP-gruppen"
+    [ sized 0.23 $ title "Tidigare och nuvarande forskning i FP-gruppen"
     , content $ list Unnumbered
         [ "Haskell (!)"
         , sublist Unnumbered "Domänspecifika programmeringsspråk"
-            [ "Lava (för hårdvara), Obsidian (GPU), Feldspar (signalbehandling), etc."
+            [ "Lava (för hårdvara), Obsidian (GPU),\n Feldspar (signalbehandling), etc."
             ]
         , sublist Unnumbered "Testning och formell verifiering"
             [ "QuickCheck (testning), SAT-lösare och bevisverktyg"
@@ -237,7 +237,7 @@ säkerhet = column
       \inte läcker ut"
     , "T.ex. password managers, bankapplikationer, etc."
     , "I Haskell kan man implementera ett bibliotek som garanterar \
-      \att information inte läcks på ett olämpligt sätt."
+      \att information inte läcks på\n ett olämpligt sätt."
     , "För att uppnå samma sak i andra språk skulle man behöva \
       \utöka eller ändra på språket."
     ]
@@ -246,14 +246,14 @@ säkerhet = column
 säkerhet2 :: Slide
 säkerhet2 = column
   [ smallTitle "Vår forskning: Säkerhetsbibliotek"
-  , content $ list Unnumbered
+  , smallContent $ list Unnumbered
     [ "Exempel: Alice will skriva en password manager."
-    , "Ninjacoder tillhandahåller ett bibliotek för att varna för \
+    , "Ninjacoder tillhandahåller ett bibliotek för att varna för\n \
       \svaga passwords.\nDet kommunicerar med en server för att \
-      \ibland hämta en lista med svaga passwords."
-    , "Hur kan Alice var säker på att ninjacoders biblioteket inte stjäl passwords?"
+      \ibland hämta en\n lista med svaga passwords."
+    , "Hur kan Alice var säker på att ninjacoders biblioteket inte\n stjäl passwords?"
     ]
-  , centered $ withAttrs ["width" =: "1000"] $ image "passwordninja.png"
+  , sized 0.33 $ centered $ withAttrs ["width" =: "1000"] $ image "passwordninja.png"
   ]
 
 säkerhet3 :: Slide
@@ -269,9 +269,9 @@ säkerhet3 = column
   ]
 
 sat :: Slide
-sat = column 
+sat = column
   [ title "Vår forskning: Verifiering"
-  , content $ list Unnumbered
+  , smallContent $ list Unnumbered
     [ sublist Unnumbered "Vår grupp har utvecklat flera verktyg för verifiering"
       [ "**MiniSAT**, en av världens bästa SAT-lösare\n\
         \Används flitigt för att verifiera hårdvarukretsar."
@@ -288,7 +288,7 @@ sat2 = column
   , row
       [ content $ centered $ sized 0.1 $ list Unnumbered
         [ "SAT-lösare kan användas för att enkelt skriva en sudoku-lösare"
-        , "Beskriv hur ett korrekt sudoku-bräde ser ut"
+        , "Beskriv hur ett korrekt sudoku-\nbräde ser ut"
         , "SAT-lösaren hittar en lösning på brädet"
         ]
       , centered $ image "sudoku.png"
@@ -308,7 +308,7 @@ companies = column
             ]
         , sublist Unnumbered "Nyckelegenskaper"
             [ "Produktivitet: koncis kod"
-            , "Parallellisering: funktioner kan beräknas parallellt utan att störa varandra"
+            , "Parallellisering: funktioner kan beräknas parallellt utan\n att störa varandra"
             , "Korrekthet: tydlig kod, testbarhet och starka typsystem"
             ]
         ]
@@ -323,11 +323,11 @@ logos = column
 varförFP :: Slide
 varförFP = column
     [ smallTitle "Varför lära sig om Funktionell Programmering?"
-    , content $ list Unnumbered
+    , smallContent $ list Unnumbered
         [ "Rapid prototyping = det går *snabbt* att få fungerande program"
-        , "strong type system = datorn hjälper dig att göra rätt"
-        , "powerful design patterns = programsnuttar kan återanvändas mycket flexibelt"
-        , "conceptual clarity = tydlig mening"
+        , "Kraftfullt type system = datorn hjälper dig att göra rätt"
+        , "Design patterns = programsnuttar kan återanvändas mycket flexibelt"
+        , "Lättförståeliga program"
         , "industrial strength compilers = mycket bra kompilatorer"
         , "promising parallelisation properties = lovande egenskaper för parallellisering"
         ]
@@ -344,8 +344,8 @@ kurserFP1 = column
         [ "**LP1:** [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/)"
         , "**LP2:** [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/)"
         , "**LP3:** [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)"
-        , sublistU "(**LP3:** [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/))"
-          ["inställd våren 2015"]
+        -- , sublistU "(**LP3:** [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/))"
+        --   ["inställd våren 2015"]
         , "**LP3-4:** Kandidatarbete &ndash; beroende på projektval"
         ]
       ]
@@ -431,7 +431,7 @@ main = do
       , haste2
       , bouncing
       , fpResearch
-      , haskell
+      -- , haskell
       , dsl_Lava1
       , dsl_Lava2
       , dsl_Lava3
@@ -444,7 +444,7 @@ main = do
       , säkerhet3
       , companies
       , logos
-      , varförFP
+      -- , varförFP
       , kurserFP1
       , kurserFP2
       , kurserFP3
