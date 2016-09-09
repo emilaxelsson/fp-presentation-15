@@ -1,2 +1,7 @@
 *~
 slides.html
+slides/Main.jsmod
+slides/slides.hi
+slides/slides.o
+.cabal-sandbox
+cabal.sandbox.config

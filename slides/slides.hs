@@ -64,7 +64,7 @@ smallContent = groupAttrs atts . smallSize
 first :: Slide
 first = verticallyCentered $ column
     [ sized 0.25 $ title' "Functional Programming\n @ D&IT"
-    , sized 0.2 $ centered $ normalSize "Josef Svenningsson and Emil Axelsson"
+    , sized 0.2 $ centered $ normalSize "Patrik Jansson (slides by Josef Svenningsson & Emil Axelsson)"
     ]
 
 whatIsFP :: Slide
@@ -192,7 +192,7 @@ dsl_Lava2 = column
     , sized 0.08 $ smallContent $ list Unnumbered ["Parallella prefixnätverk är rekursiva:"]
     , sized 0.37 $ sklanskyLava
     , sized 0.2 $ centered $ image "Sklansky_32.png"
-    , sized 0.2 $ smallContent "(Ett program genererar både hårdvara och bilden ovan!)"
+    , sized 0.2 $ smallContent "(Samma program genererar både hårdvara och bilden ovan!)"
     ]
 
 dsl_Lava3 :: Slide
@@ -317,7 +317,7 @@ companies = column
 logos :: Slide
 logos = column
     [ sized 0.1 ""
-    , centered $ withAttrs ["width" =: "850"] $ image "../AllLogos.png"
+    , centered $ withAttrs ["width" =: "850"] $ image "AllLogos.png"
     ]
 
 varförFP :: Slide
@@ -535,7 +535,7 @@ bouncingBalls el = do
     clear  <- mkButton "clear"
     elemColumn el [canvas, clear]
 
-    Just can <- getCanvas canvas
+    Just can <- fromElem canvas
 
     -- Use an IORef to communicate between the animation and the event handlers
     state <- newIORef []
@@ -576,4 +576,3 @@ bouncingBalls el = do
 
 -- fixCoord (x, y) = (x, y - 310) -- for my (Patrik's) native resolution
 -- fixCoord (x, y) = (x, y - 350) -- for 1680x1050 pixels (HB4) in full-screen mode
-
