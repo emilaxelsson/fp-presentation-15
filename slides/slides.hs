@@ -63,7 +63,7 @@ smallContent = groupAttrs atts . smallSize
 
 first :: Slide
 first = verticallyCentered $ column
-    [ sized 0.25 $ title' "Functional Programming\n @ D&IT"
+    [ sized 0.25 $ title' "Funktionell Programmering\n @ D&IT"
     , sized 0.2 $ centered $ normalSize "Patrik Jansson (slides by Josef Svenningsson & Emil Axelsson)"
     ]
 
@@ -71,9 +71,9 @@ whatIsFP :: Slide
 whatIsFP = column
     [ title "Vad är funktionell programmering?"
     , content $ list Unnumbered
-        [ "En programmeringsmetodik"
+        [ "En programmeringsmetodik - ett sätt att programmera"
         , sublist Unnumbered "Fokus på **abstraktion** och **komposition**"
-          [ "Skapa återanvändabara byggstenar"
+          [ "Skapa återanvändbara byggstenar"
           , "Bygg program genom att komponera dessa byggstenar"
           ]
         , "Korta och koncisa program"
@@ -370,7 +370,7 @@ kurserFP3 :: Slide
 kurserFP3 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
     , smallContent $ list Unnumbered
-      [ sublistU "[Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/) /\n [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/) <span style=\"font-size:80%\">(Dave Sands)</span>\n År 1, LP1 för D, DV och valfri för IT (år 3, LP2)"
+      [ sublistU "[Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/) (Dave Sands)/\n [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/) <span style=\"font-size:80%\">(Thomas Hallgren)</span>\n År 1, LP1 för D, DV och valfri för IT (år 3, LP2)"
         [ "Språket Haskell"
         , "Rekursion, datatyper, testning, etc."
         ]
@@ -381,7 +381,7 @@ kurserFP4 :: Slide
 kurserFP4 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
     , smallContent $ list Unnumbered
-      [ sublistU "År 2-3: [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)\n <span style=\"font-size:80%\">(Cesar Ionescu & Patrik Jansson)</span>"
+      [ sublistU "År 2-3: [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)\n <span style=\"font-size:80%\">(Patrik Jansson & Cesar Ionescu)</span>"
           [ "Exempel på domänspecifika språk: datum, algebraiska uttryck, integraler"
           , "Förstå centrala matematiska begrepp genom programmering och tvärtom!"
           , "Fokus på lämplig notation för matematik (därav \"språk\" i titeln)"
@@ -411,7 +411,7 @@ kurserFP6 = column
           [ "Hur implementerar man ett programspråk?"
           , "Fokus på \"front end\" &ndash; syntax, semantik, typer, etc.\n&nbsp;"
           ]
-      , sublistU "[Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/) <span style=\"font-size:80%\">(Josef Svenningsson → Thomas Hallgren)</span>"
+      , sublistU "[Compiler Construction](http://www.cse.chalmers.se/edu/course/TDA283/) <span style=\"font-size:80%\">(Josef Svenningsson → Alex Gerdes)</span>"
           [ "Hur implementerar man ett programspråk?"
           , "Fokus på \"back end\" &ndash; kodgenerering, optimering, etc."
           ]
