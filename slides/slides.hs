@@ -10,7 +10,6 @@ import qualified Haste.Graphics.Canvas as Canvas
 import Haste.Deck
 
 
-
 --------------------------------------------------------------------------------
 -- Helper functions
 
@@ -63,8 +62,14 @@ smallContent = groupAttrs atts . smallSize
 
 first :: Slide
 first = verticallyCentered $ column
-    [ sized 0.25 $ title' "Funktionell Programmering\n @ D&IT"
-    , sized 0.2 $ centered $ normalSize "Patrik Jansson (slides by Josef Svenningsson & Emil Axelsson)"
+    [ sized 0.25 $ title' "Funktionell Programmering\n på Chalmers och GU"
+    , sized 0.2 $ centered $ normalSize "Patrik Jansson (förberedd av Josef Svenningsson & Emil Axelsson)"
+    , content $ fontSize (Pt 18) $ centered $ code
+        "sort :: [Int]    -> [Int]                             \n\
+        \sort    []       =  []                                 \n\
+        \sort    (x:xs)   =  sort smaller ++ [x] ++ sort larger  \n\
+        \  where  smaller =  filter (&lt;x)  xs                      \n\
+        \         larger  =  filter (&gt;=x) xs                       \n"
     ]
 
 whatIsFP :: Slide
@@ -140,7 +145,7 @@ fpResearch :: Slide
 fpResearch = column
     [ sized 0.23 $ title "Tidigare och nuvarande forskning i FP-gruppen"
     , content $ list Unnumbered
-        [ "Haskell (!)"
+        [ "Haskell (!) ([kompilator från Chalmers 1990](http://wiki.portal.chalmers.se/cse/pmwiki.php/FP/Haskell20years))"
         , sublist Unnumbered "Domänspecifika programmeringsspråk"
             [ "Lava (för hårdvara), Obsidian (GPU),\n Feldspar (signalbehandling), etc."
             ]
@@ -334,7 +339,11 @@ varförFP = column
     ]
 
 contentLU = content . list Unnumbered
+-- sublistU :: Markup -> [List] -> List
 sublistU = sublist Unnumbered
+
+introFP :: String
+introFP = "[Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/)"
 
 kurserFP1 :: Slide
 kurserFP1 = column
@@ -344,8 +353,6 @@ kurserFP1 = column
         [ "**LP1:** [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/)"
         , "**LP2:** [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/)"
         , "**LP3:** [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)"
-        -- , sublistU "(**LP3:** [Programming Paradigms](http://www.cse.chalmers.se/~bernardy/pp/))"
-        --   ["inställd våren 2015"]
         , "**LP3-4:** Kandidatarbete &ndash; beroende på projektval"
         ]
       ]
@@ -370,7 +377,7 @@ kurserFP3 :: Slide
 kurserFP3 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
     , smallContent $ list Unnumbered
-      [ sublistU "[Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/) (Dave Sands)/\n [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/) <span style=\"font-size:80%\">(Thomas Hallgren)</span>\n År 1, LP1 för D, DV och valfri för IT (år 3, LP2)"
+      [ sublistU ("Introduktion till Funktionell Programmering (Dave Sands) /\n Functional Programming (Thomas Hallgren)\n År 1, LP1 för D, DV och valfri för IT (år 3, LP2)")
         [ "Språket Haskell"
         , "Rekursion, datatyper, testning, etc."
         ]
@@ -381,7 +388,7 @@ kurserFP4 :: Slide
 kurserFP4 = column
     [ smallTitle "Mer om kurserna i de tre första åren"
     , smallContent $ list Unnumbered
-      [ sublistU "År 2-3: [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)\n <span style=\"font-size:80%\">(Patrik Jansson & Cesar Ionescu)</span>"
+      [ sublistU "År 2-3: [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)\n <span style=\"font-size:80%\">(Patrik Jansson & Cezar Ionescu)</span>"
           [ "Exempel på domänspecifika språk: datum, algebraiska uttryck, integraler"
           , "Förstå centrala matematiska begrepp genom programmering och tvärtom!"
           , "Fokus på lämplig notation för matematik (därav \"språk\" i titeln)"
