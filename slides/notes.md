@@ -6,7 +6,7 @@ Examples from other talks:
 * (Grundläggande datateknik: IT läser den i LP1)
 * (Java: IT läser det i LP1)
 * ValiantAgda: Too complex: http://www.cse.chalmers.se/~patrikj/talks/IFIP2.1ZeegseJansson_ParParseAlgebra.org
-*
+* John's invited talk in the FP course: http://www.cse.chalmers.se/edu/course/TDA555/Material/Guest_John/John2012.pdf
 
 Google for Hackage + Chalmers
 * Lava:                https://hackage.haskell.org/package/chalmers-lava2000
