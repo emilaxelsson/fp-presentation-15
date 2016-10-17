@@ -63,8 +63,8 @@ smallContent = groupAttrs atts . smallSize
 first :: Slide
 first = verticallyCentered $ column
     [ sized 0.25 $ title' "Funktionell Programmering\n på Chalmers och GU"
-    , sized 0.2 $ centered $ normalSize "Patrik Jansson (förberedd av Josef Svenningsson & Emil Axelsson)"
-    , content $ fontSize (Pt 18) $ centered $ code
+    , sized 0.2 $ centered $ normalSize "Patrik Jansson (+ J. Svenningsson & E. Axelsson)"
+    , content $ fontSize (Pt 22) $ centered $ code
         "sort :: [Int]    -> [Int]                             \n\
         \sort    []       =  []                                 \n\
         \sort    (x:xs)   =  sort smaller ++ [x] ++ sort larger  \n\
@@ -124,8 +124,11 @@ haste2 :: Slide
 haste2 = column
     [ smallTitle "Haste-exempel: programmerbara slides"
     , content $ list Unnumbered
-        [ "Dessa slides är ett Haskell-program som\n just nu körs i webb-läsaren!"
-        , "Skrivna mha. Antons `haste-deck` bibliotek: [https://github.com/valderman/haste-deck](https://github.com/valderman/haste-deck)"
+        [ "Dessa slides är ett Haskell-program som \n\
+          \just nu körs i webb-läsaren!"
+        , "Skrivna mha. Antons `haste-deck` bibliotek: \
+          \[github.com/valderman/haste-deck]\
+          \(https://github.com/valderman/haste-deck)"
         ]
     , centered $ image "code.png"
     ]
@@ -143,16 +146,19 @@ bouncing = column
 
 fpResearch :: Slide
 fpResearch = column
-    [ sized 0.23 $ title "Tidigare och nuvarande forskning i FP-gruppen"
+    [ title "Forskning i FP-gruppen"
     , content $ list Unnumbered
         [ "Haskell (!) ([kompilator från Chalmers 1990](http://wiki.portal.chalmers.se/cse/pmwiki.php/FP/Haskell20years))"
         , sublist Unnumbered "Domänspecifika programmeringsspråk"
             [ "Lava (för hårdvara), Obsidian (GPU),\n Feldspar (signalbehandling), etc."
             ]
         , sublist Unnumbered "Testning och formell verifiering"
-            [ "QuickCheck (testning), SAT-lösare och bevisverktyg"
+            [ "QuickCheck (testning), SAT-lösare"
+            , "Teorembevisning (Agda)"
             ]
-        , "Klimateffektforskning"
+        , sublist Unnumbered "Andra tillämpningar"
+            [ "Språk, Klimateffekter, Matematikens DSL, ..."
+            ]
         ]
     ]
 
@@ -245,6 +251,7 @@ säkerhet = column
       \att information inte läcks på\n ett olämpligt sätt."
     , "För att uppnå samma sak i andra språk skulle man behöva \
       \utöka eller ändra på språket."
+    , "[Alejandro Russo](http://www.cse.chalmers.se/~russo/)'s grupp jobbar på detta"
     ]
   ]
 
@@ -351,8 +358,8 @@ kurserFP1 = column
     , smallContent $ list Unnumbered
       [ sublistU "Kandidatnivån (första tre åren):"
         [ "**LP1:** [Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/)"
-        , "**LP2:** [Functional Programming](www.cse.chalmers.se/edu/course/TDA452/)"
-        , "**LP3:** [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath)"
+        , "**LP2:** [Functional Programming](http://www.cse.chalmers.se/edu/course/TDA452/)"
+        , "**LP3:** [Domain Specific Languages of Mathematics](https://github.com/DSLsofMath/DSLsofMath#dslsofmath)"
         , "**LP3-4:** Kandidatarbete &ndash; beroende på projektval"
         ]
       ]
@@ -447,8 +454,8 @@ main = do
       , sat
       , sat2
       , säkerhet
-      , säkerhet2
-      , säkerhet3
+--      , säkerhet2
+--      , säkerhet3
       , companies
       , logos
       -- , varförFP
