@@ -68,8 +68,8 @@ first = verticallyCentered $ column
         "sort :: [Int]    -> [Int]                             \n\
         \sort    []       =  []                                 \n\
         \sort    (x:xs)   =  sort smaller ++ [x] ++ sort larger  \n\
-        \  where  smaller =  filter (&lt;x)  xs                      \n\
-        \         larger  =  filter (&gt;=x) xs                       \n"
+        \  where  smaller =  filter (&lt;x)  xs                   \n\
+        \         larger  =  filter (&gt;=x) xs                    \n"
     ]
 
 whatIsFP :: Slide
@@ -246,13 +246,24 @@ säkerhet = column
   , content $ list Unnumbered
     [ "I vissa program är det viktigt att säker information \
       \inte läcker ut"
-    , "T.ex. password managers, bankapplikationer, etc."
+    , "T.ex. password managers, bankappar, etc."
     , "I Haskell kan man implementera ett bibliotek som garanterar \
       \att information inte läcks på\n ett olämpligt sätt."
     , "För att uppnå samma sak i andra språk skulle man behöva \
       \utöka eller ändra på språket."
-    , "[Alejandro Russo](http://www.cse.chalmers.se/~russo/)'s grupp jobbar på detta"
     ]
+  ]
+
+säkerhetAgda = column
+  [ smallTitle "Vår forskning: Säkerhetsbibliotek: bevis i Agda"
+  , contentLU
+      [ "Hur säker är man egentligen på ett handgjort bevis?"
+      , "Om man kan göra en bra modell av biblioteket \
+        \kan man också specificera vad 'säker' betyder \
+        \och skriva ned bevis som Agda kan kontrollera!"
+      , "=> Datorstödd teorembevisning."
+      , "[Alejandro Russo](http://www.cse.chalmers.se/~russo/)'s grupp jobbar på detta"
+      ]
   ]
 
 säkerhet2 :: Slide
@@ -307,6 +318,46 @@ sat2 = column
       ]
   ]
 
+agda :: Slide
+agda = column
+    [ smallTitle "Vår forskning: att programmera bevis"
+    , content $ list Unnumbered
+        [ sublistU "[Agda](http://wiki.portal.chalmers.se/agda/pmwiki.php) \
+              \är ett språk från Gbg som stödjer"
+          [  "program med beroende typer,"
+          , "specifikation av programegenskaper,"
+          , "samt bevis av korrekthet."
+          ]
+        ]
+-- TODO: example
+    ]
+
+agda2 :: Slide
+agda2 = column
+  [ title "Exempel på program i Agda"
+  , rightAgda
+  , leftAgda
+  ]
+
+leftAgda :: Slide
+leftAgda = sized 0.37 $ fontSize (Pt 18) $ code
+    "data Nat : Set where     \n\
+    \  zero : Nat             \n\
+    \  suc  : Nat -> Nat      \n\
+    \                         \n\
+    \_+_ : Nat -> Nat -> Nat  \n\
+    \zero  + m  =  m          \n\
+    \suc n + m  =  suc (n + m)"
+
+rightAgda :: Slide
+rightAgda = sized 0.37 $ fontSize (Pt 18) $ code
+    "data Bool : Set where \n\
+    \  true  : Bool        \n\
+    \  false : Bool        \n\
+    \                      \n\
+    \if_then_else_ : {A : Set} -> Bool -> A -> A -> A \n\
+    \if true  then x else y  =  x \n\
+    \if false then x else y  =  y"
 
 companies :: Slide
 companies = column
@@ -350,7 +401,8 @@ contentLU = content . list Unnumbered
 sublistU = sublist Unnumbered
 
 introFP :: String
-introFP = "[Introduktion till Funktionell Programmering](http://www.cse.chalmers.se/edu/course/TDA555/)"
+introFP = "[Introduktion till Funktionell Programmering]\
+          \(http://www.cse.chalmers.se/edu/course/TDA555/)"
 
 kurserFP1 :: Slide
 kurserFP1 = column
@@ -453,7 +505,10 @@ main = do
       , wired2
       , sat
       , sat2
+      , agda
+      , agda2
       , säkerhet
+      , säkerhetAgda
 --      , säkerhet2
 --      , säkerhet3
       , companies
