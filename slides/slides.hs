@@ -392,6 +392,7 @@ språkteknologi = column
         , "... till och från ca 30 naturliga språk"
         , "Använder funktionell programmering (och beroende typer)"
         , "Leds av Aarne Ranta - [grammaticalframework.org/](http://www.grammaticalframework.org/)"
+        , "Exempel: [Kylskåpsmagneter](http://cloud.grammaticalframework.org/minibar/minibar.html)"
         ]
     ]
 
@@ -496,6 +497,13 @@ kurserFP6 = column
       ]
     ]
 
+frågor :: Slide
+frågor = column
+    [ title "Frågor?"
+    , row [ withAttrs ["width" =: "500"] $ image "Ekorre_smultron_Langvind.jpg"
+          , withAttrs ["width" =: "350"] $ image "Tall_i_sol_Langvind.jpg"]
+    ]
+
 end :: Slide
 end = verticallyCentered $ title' "End of presentation."
 
@@ -533,6 +541,7 @@ main = do
       , kurserFP4
       , kurserFP5
       , kurserFP6
+      , frågor
       , end
       ]
 
@@ -562,6 +571,7 @@ step bs = [ps | _:ps <- bs] -- This also removes empty lists (finished balls)
 ballShape :: Ball -> Shape ()
 ballShape []      = return ()
 ballShape (pos:_) = circle pos radius
+-- ballShape (pos:_) = circle pos (radius+3*sin (snd pos / 75))
 
 drawBall :: Ball -> Picture ()
 drawBall ball = do
@@ -636,14 +646,6 @@ bouncingBalls el = do
 
     -- Set an event handler for the clear button
     clear `onEvent` Click $ \_ -> writeIORef state []
-
-
-
-
-
-
-
-
 
 
 --------------------------------------------------------------------
