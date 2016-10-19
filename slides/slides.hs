@@ -383,6 +383,18 @@ logos = column
     , centered $ withAttrs ["width" =: "850"] $ image "AllLogos.png"
     ]
 
+språkteknologi :: Slide
+språkteknologi = column
+    [ title "Vår forskning: språkteknologi"
+    , contentLU
+        [ "Vision: Grammatical Framework: Formalizing the Grammars of the World ([GoogleTechTalks](https://www.youtube.com/watch?v=x1LFbDQhbso))"
+        , "Grammatik-baserad teknik för översättning ..."
+        , "... till och från ca 30 naturliga språk"
+        , "Använder funktionell programmering (och beroende typer)"
+        , "Leds av Aarne Ranta - [grammaticalframework.org/](http://www.grammaticalframework.org/)"
+        ]
+    ]
+
 varförFP :: Slide
 varförFP = column
     [ smallTitle "Varför lära sig om Funktionell Programmering?"
@@ -509,6 +521,7 @@ main = do
       , agda2
       , säkerhet
       , säkerhetAgda
+      , språkteknologi
 --      , säkerhet2
 --      , säkerhet3
       , companies
